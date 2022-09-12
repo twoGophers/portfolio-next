@@ -1,0 +1,45 @@
+.parallax-body {
+    position: absolute;
+    height: 100.5vh;
+    width: 101.5vw;
+    top: -5px;
+    left: -5px;
+    overflow: hidden;
+    object-fit: cover;
+    .parallax-bg, .parallax-cup, .parallax-laptop {
+        background-size: cover;
+        background-position: center;
+        width: 102vw;
+        height: 101vh;
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color:rgba(0, 0, 0, .03);
+        }
+    }
+    .parallax-bg {
+        background: url('../../public/images/body/h-ygyrw_MuBg.png') 50% 50%;
+    }
+    .parallax-cup {
+        background: url('../../public/images/body/h-ygyrw_Mu2.png') 50% 50%; 
+    }
+    .parallax-laptop {
+        background: url('../../public/images/body/h-ygyrw_Mu1.png') 50% 50%;
+    }
+}
+
+
+@media screen  and (max-width: 768px) {
+    .parallax-body {
+        width: 100.5vw;
+        height: 100.5vh;
+        overflow: hidden;
+    } 
+}

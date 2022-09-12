@@ -1,0 +1,67 @@
+.skroll-down {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 90vh;
+    justify-content: flex-start;
+    align-items: flex-end;
+    position: absolute;
+    .scroll-dow__block {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        transform: rotate(90deg);
+        // width: fit-content;
+        min-width: 200px;
+        margin-left: -50px;
+        margin-bottom: 70px;
+        overflow: hidden;
+
+        animation: opacity-block 2s linear;
+        .scoll-down__text {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+            animation: opacity-scroll-down ;
+        }
+        & span {
+            display: flex !important;
+
+            transition: 0.3s;
+            animation: arrow-down 2.5s linear infinite;
+        }
+
+    }
+}
+
+@keyframes arrow-down {
+    0%{ transform: translateX(10px);}
+    50%{ transform: translateX(30px);}
+    100%{ transform: translateX(10px);}
+}
+
+@keyframes opacity-block {
+    0% {
+        opacity: 0;
+      }
+      20% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+      }
+}
+
+@media screen and (max-width: 768px) {
+    .skroll-down {
+        .scroll-dow__block {
+            margin-left: -70px;
+            .scoll-down__text {
+                font-size: 1.4rem;
+            }
+        }
+        
+    }
+}

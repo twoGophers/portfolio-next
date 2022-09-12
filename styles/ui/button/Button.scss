@@ -1,0 +1,22 @@
+.btn {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #c69b75;
+    line-height: 1;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 50px;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    letter-spacing: 0.1em;
+    &:hover {
+        background: #b9906c;
+        box-shadow: 0px 5px 10px 0px rgba(34, 60, 80, 0.2);
+    }
+    &:active {
+        transform: translatey(1px) scale(.98);
+        box-shadow: none; 
+    }
+}

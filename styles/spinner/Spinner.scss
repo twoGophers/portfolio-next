@@ -1,0 +1,19 @@
+.spinner {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 1000;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .spinner-img {
+      width: 100px;
+      .spinner-text {
+        font-weight: 600;
+        margin-top: 20px;
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+}
