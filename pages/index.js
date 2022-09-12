@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Layout from '../components/layout/Layout';
 import Spinner from '../components/Loading/Spinner';
 
+
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -23,8 +24,6 @@ export default function App() {
 
   //Переменные
   const refSlideOne = useRef(null);
-
-  const [ showScrollDown, setShowScrollDown] = useState(false);
 
   //Опредение наличия класса
   // useEffect(() => {
@@ -91,14 +90,30 @@ export default function App() {
                   contentOne={'I love Design, Technology,'}
                   contentTwo={'and Story.'}
                   activePortfolio={false}
-                  // activeImages={true}
+                  activeImages={true}
                   btn={'See more'}
                   btnActive={true}
                 />
               </>  : false
             )}
             </SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
+            <SwiperSlide>
+              {({ isActive }) => (
+                isActive ? 
+                <> 
+                  <SlideBlock 
+                    titleOne={'my skill'}
+                    titleTwo={''}
+                    contentOne={'Life is development'}
+                    contentTwo={''}
+                    activePortfolio={false}
+                    // activeImages={true}
+                    btn={'Skill'}
+                    btnActive={true}
+                  />
+                </>  : false
+              )}
+            </SwiperSlide>
             <SwiperSlide>Slide 4</SwiperSlide>
           </Swiper>
       </Layout>

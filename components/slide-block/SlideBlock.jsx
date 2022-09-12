@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Button from '../ui/button/Button';
 
-import img from '../../public/images/body/Beautiful-sunset-sea-sky-stones-waves-dusk_2560x1600.jpg'
+import aboutMe from '../../public/images/about/IMG_1089.jpg'
 
 export default function SlideBlock({
   titleOne,
@@ -14,7 +15,6 @@ export default function SlideBlock({
   btn,
   btnActive
   }) {
-    console.log(titleOne)
   return (
     <>
         <div className="active-slide">
@@ -40,13 +40,13 @@ export default function SlideBlock({
                 </Link>: false}
             </div>
           </div>
-          <div className="active-slide__illustration illustration" >
+          <div className="active-slide__illustration illustration" style={ activeImages ? {justifyContent : 'center'} : {justifyContent : 'center'} }>
             { activeImages ?
-              {/* <Image
+              <Image
                 width={400}
                 height={400}
-                src={img}
-              /> */} : false
+                src={aboutMe}
+              /> : false
               }              
               {activePortfolio ? 
               <p className='illustration__portfolio'>
