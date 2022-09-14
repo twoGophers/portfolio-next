@@ -76,6 +76,9 @@
         }
         &__btn-button {
             min-height: 50px;
+            display: flex;
+            justify-content: center;
+            position: relative;
         }
     }
     .illustration {
@@ -84,32 +87,44 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        &__portfolio {
-            padding: 5px;
-            color: #c69b75;
-            font-size: 40px;
-            transform: rotate3d(1, 1, 2, 8deg);
-            overflow: hidden;
-            color: transparent;
-            backface-visibility: hidden;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%; 
-            span {
-                display: inline-block;
-                text-shadow: 0 0 0 whitesmoke;
-                animation: smoky 5s 3s both;
-                letter-spacing: 5px;
-                &:nth-child(even){
-                    animation-name: smoky-mirror;
-                  }
-                  
-            }
-        }
+
+    }
+    .ilustration-img {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
     }
 }
+
+.portfolio {
+    padding: 5px;
+    color: #c69b75;
+    font-size: 40px;
+    transform: rotate3d(1, 1, 2, 8deg);
+    overflow: hidden;
+    color: transparent;
+    backface-visibility: hidden;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    position: absolute;
+    right: 5%; 
+    span {
+        display: inline-block;
+        text-shadow: 0 0 0 whitesmoke;
+        animation: smoky 5s 3s both;
+        letter-spacing: 5px;
+        &:nth-child(even){
+            animation-name: smoky-mirror;
+            }
+            
+    }
+}
+
 
 //Animation title slider
 @keyframes title-slider {
@@ -177,15 +192,11 @@
     }
   } 
 
-  @media screen and (min-width: 1400px) {
-    .active-slide {
-        .illustration{
-            &__portfolio {
-                padding-right: 20%;
-            }
-        }
-    }
-  }
+//   @media screen and (min-width: 1400px) {
+//     .portfolio {
+//         padding-right: 20%;
+//     }
+//   }
 
   @media screen and (max-width: 1400px) {
     .active-slide {
@@ -196,6 +207,9 @@
                 }
             }
         }
+    }
+    .portfolio {
+        right: 0%;
     }
   }
 
@@ -216,12 +230,9 @@
                 margin-top: 10%;
             }
         }
-        .illustration{
-            &__portfolio {
-                font-size: 30px;
-                padding-right: 0%;
-            }
-        }
+    }
+    .portfolio {
+        font-size: 30px;
     }
   }
 
@@ -236,23 +247,22 @@
                 }
             }
         }
-        .illustration{
-            &__portfolio {
-                align-items: flex-end;
-                justify-content: flex-end; 
-            }
-        }
     }
+    .portfolio {
+        align-items: flex-end;
+        justify-content: flex-end; 
+    }
+
   }
 
   @media screen and (max-width: 460px) {
     .active-slide {
         .context {
-            margin-left: 5%;
             height: 60%;
-            width: 100%;
+            width: 90%;
             justify-content: space-between;
             align-content: center;
+            margin: 0 auto;
             &__title {
                 & span {
                     font-size: 2.5rem;
@@ -269,10 +279,25 @@
                 margin-top: 10%;
             }
         }
-        .illustration{
-            display: none;
-        }
     }
+    .portfolio {
+        display: none;
+    }
+    .active-slide-two {
+        flex-direction: column-reverse;
+    }
+    .ilustration-img {
+        position: relative !important;
+        height: 50% !important;
+        .about-me {
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+            .parallax-about {
+                width: 100%;
+            }
+        }
+    }   
   }
 
   @media screen and (max-width: 360px) {

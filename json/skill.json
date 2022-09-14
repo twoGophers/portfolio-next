@@ -1,0 +1,76 @@
+{
+    "skill" : [
+        { 
+            "id" : 1, 
+            "icon" : "bootstrap.svg", 
+            "text" : "bootstrap",
+            "persent" : 50
+        },
+        { 
+            "id" : 2, 
+            "icon" : "css.svg", 
+            "text" : "css",
+            "persent" : 90
+        },
+        { 
+            "id" : 3, 
+            "icon" : "firebase.svg", 
+            "text" : "firebase",
+            "persent" : 40
+        },
+        { 
+            "id" : 4, 
+            "icon" : "git.svg", 
+            "text" : "git",
+            "persent" : 80
+        },
+        { 
+            "id" : 5, 
+            "icon" : "html.svg", 
+            "text" : "html",
+            "persent" : 80
+        },
+        { 
+            "id" : 6, 
+            "icon" : "js.svg",
+            "text" : "java script",
+            "persent" : 70
+        },
+        { 
+            "id" : 7, 
+            "icon" : "nextjs.svg", 
+            "text" : "next js",
+            "persent" : 30
+        },
+        { 
+            "id" : 8, 
+            "icon" : "nuxt.svg", 
+            "text" : "nuxt js",
+            "persent" : 50
+        },
+        { 
+            "id" : 9, 
+            "icon" : "react.svg", 
+            "text" : "react js",
+            "persent" : 60
+        },
+        { 
+            "id" : 10, 
+            "icon" : "sass.svg", 
+            "text" : "scss",
+            "persent" : 80
+        },
+        { 
+            "id" : 11, 
+            "icon" : "vue.svg", 
+            "text" : "vue js",
+            "persent" : 70
+        },
+        { 
+            "id" : 12, 
+            "icon" : "vuetify.svg", 
+            "text" : "vuetify",
+            "persent" : 30
+        }
+    ]
+}

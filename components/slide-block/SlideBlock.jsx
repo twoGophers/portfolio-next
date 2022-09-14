@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import Button from '../ui/button/Button';
+import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
+import Image from 'next/image';
+import {skill} from '../../json/skill.json';
 
-import aboutMe from '../../public/images/about/IMG_1089.jpg'
+import aboutMe from '../../public/images/about/IMG_1089MeBg.png';
+import aboutMeI from '../../public/images/about/IMG_1089IBg.png';
+import aboutMeYellowBg from '../../public/images/about/IMG_1089YellowBg2.png';
+import aboutMeBlack from '../../public/images/about/IMG_1089BgBlack.png';
 
 export default function SlideBlock({
   titleOne,
@@ -13,11 +18,16 @@ export default function SlideBlock({
   activePortfolio,
   activeImages,
   btn,
-  btnActive
-  }) {
+  btnActive,
+  sliderActive,
+  activeSkill,
+  sliderAbout
+  } ) {
+
+
   return (
     <>
-        <div className="active-slide">
+        <div className={sliderActive ? 'active-slide active-slide-two' : 'active-slide '}>
           <div className="active-slide__context context">
             <div className="context__title">
               <span>{titleOne}</span>
@@ -40,28 +50,108 @@ export default function SlideBlock({
                 </Link>: false}
             </div>
           </div>
-          <div className="active-slide__illustration illustration" style={ activeImages ? {justifyContent : 'center'} : {justifyContent : 'center'} }>
-            { activeImages ?
-              <Image
-                width={400}
-                height={400}
-                src={aboutMe}
-              /> : false
-              }              
-              {activePortfolio ? 
-              <p className='illustration__portfolio'>
-                <span>P</span>
-                <span>O</span>
-                <span>R</span>
-                <span>T</span>
-                <span>F</span>
-                <span>O</span>
-                <span>L</span>
-                <span>I</span>
-                <span>O</span>
-              </p> : false}
-          </div>
-        </div>
+          {sliderAbout ?
+            <div className={activeImages ? "active-slide__illustration illustration ilustration-img" : false}>
+              { activeImages ?
+                  <div className='about-me'>
+                    <MouseParallaxContainer
+                      className="parallax-about"
+                    >
+                      <MouseParallaxChild
+                        className="parallax-about__item"
+                        factorX={0.01}
+                        factorY={0.01}
+                        updateStyles={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <Image src={aboutMe} />
+                      </MouseParallaxChild>
+                      <MouseParallaxChild
+                        className="parallax-about__item"
+                        factorX={0.07}
+                        factorY={0.07}
+                        updateStyles={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <Image src={aboutMeI} />
+                      </MouseParallaxChild>
+                      <MouseParallaxChild
+                        className="parallax-about__item"
+                        factorX={0.09}
+                        factorY={0.09}
+                        updateStyles={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <Image src={aboutMeYellowBg} />
+                      </MouseParallaxChild>
+                      <MouseParallaxChild
+                          className="parallax-about__item"
+                          factorX={0.09}
+                          factorY={0.09}
+                          updateStyles={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                        <Image src={aboutMeBlack} />
+                      </MouseParallaxChild>
+                    </MouseParallaxContainer>
+                  </div> : false
+                }              
+            </div> : false}
+          { activeSkill ? 
+            <div className="skill">
+              <Link href="/">
+                <a>
+                  { skill.map( icon => (
+                    <div className='skill__icon' 
+                      key = { icon.id} >
+                      <Image 
+                        src={require('/public/images/skill/' + icon.icon)}   
+                      />
+                    <p>{ icon.text }</p>
+                  </div>
+                  )) } 
+                </a>
+              </Link>
+            </div> : false
+          }  
+        </div>              
+        {activePortfolio ? 
+          <p className='portfolio'>
+            <span>P</span>
+            <span>O</span>
+            <span>R</span>
+            <span>T</span>
+            <span>F</span>
+            <span>O</span>
+            <span>L</span>
+            <span>I</span>
+            <span>O</span>
+        </p> : false}
     </>
   )
 }
+
+// export async function getStaticProps() {
+//   const res = await fetch('../../json/skill.json')
+//   const skills = await res.json();
+
+//   console.log(skills)
+
+//   return {
+//     props: {
+//       skills,
+//     }
+//   }
+// }

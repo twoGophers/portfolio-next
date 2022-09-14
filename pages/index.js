@@ -75,6 +75,8 @@ export default function App() {
                   activeImages={false}
                   btn={''}
                   btnActive={false}
+                  sliderActive={false}
+                  sliderAbout={false}
                 />
               </>  : false
             )}
@@ -93,6 +95,8 @@ export default function App() {
                   activeImages={true}
                   btn={'See more'}
                   btnActive={true}
+                  sliderActive={true}
+                  sliderAbout={true}
                 />
               </>  : false
             )}
@@ -107,9 +111,11 @@ export default function App() {
                     contentOne={'Life is development'}
                     contentTwo={''}
                     activePortfolio={false}
-                    // activeImages={true}
+                    activeSkill={true}
                     btn={'Skill'}
                     btnActive={true}
+                    sliderActive={true}
+                    sliderAbout={false}
                   />
                 </>  : false
               )}

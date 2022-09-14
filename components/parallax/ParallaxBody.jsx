@@ -1,18 +1,24 @@
-import React, { useEffect } from 'react';
-import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
-import Parallax from 'parallax-js';
+import React, { useEffect, useRef } from 'react';
+import   Parallax  from 'parallax-js';
 
 export default function ParallaxBody() {
 
-    useEffect (() => {
-        var scene = document.getElementById('scene');
-        var parallaxInstance = new Parallax (scene);
-    })
+    const sceneBody = useRef(null);
+
+    useEffect(() => {
+      const parallaxInstance = new Parallax(sceneBody.current, {
+        relativeInput: true,
+        hoverOnly: true
+      })
+  
+      parallaxInstance.enable();
+      return () => parallaxInstance.disable();
+    }, [])
 
 
   return (
     <div>
-        <div id="scene">
+        <div ref={sceneBody}>
             <div data-depth="0.02">
                 <div className='parallax-bg'></div>
             </div>

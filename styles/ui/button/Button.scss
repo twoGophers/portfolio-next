@@ -11,6 +11,8 @@
     -o-transition: .3s;
     transition: .3s;
     letter-spacing: 0.1em;
+    z-index: 100;
+    width: max-content;
     &:hover {
         background: #b9906c;
         box-shadow: 0px 5px 10px 0px rgba(34, 60, 80, 0.2);
