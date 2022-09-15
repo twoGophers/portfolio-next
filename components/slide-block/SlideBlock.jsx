@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Button from '../ui/button/Button';
 import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
 import Image from 'next/image';
-import Slideproject from './Slideproject';
+import Slideproject from './SlideProject';
 
 import aboutMe from '../../public/images/about/IMG_1089MeBg.png';
 import aboutMeI from '../../public/images/about/IMG_1089IBg.png';
