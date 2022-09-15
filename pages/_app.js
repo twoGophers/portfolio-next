@@ -1,5 +1,6 @@
 import '../styles/global/Imports.scss';
 
+import Head from 'next/head';
 import Router from 'next/router';
 import React, { useState } from 'react';
 import Loader from '../components/Loading/Spinner';
@@ -21,6 +22,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       {loading && <Loader />}
       <Component {...pageProps} />
     </>
