@@ -13,9 +13,3 @@ module.exports = {
     includePaths: [path.join(__dirname, 'styles')],
   },
 }
-
-module.exports = {
-  env: {
-    API_URL: 'https://my-json-server.typicode.com/twoGophers/portfolio-next/'
-  }
-}
