@@ -67,19 +67,7 @@
             align-content: space-around;
             justify-content: space-around;
             .skill__icon {
-                padding: 10px;
-                margin: 5px;
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 370px) {
-    .skill{
-        a {
-            .skill__icon {
-                padding: 0px;
-                margin: 5px;
+                padding: 5px;
             }
         }
     }
