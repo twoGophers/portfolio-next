@@ -145,23 +145,32 @@ export default function App({skills, projects}) {
 
 //Изменить Апи Запрос на сайте https://my-json-server.typicode.com/
 export async function getStaticProps() {
-  const skill = await fetch(`${process.env.API_URL}/skill`)
-  const skills = await skill.json()
+  try {
+    const skill = await fetch(`${process.env.API_URL}/skill`)
+    const skills = await skill.json()
 
-  const project = await fetch(`${process.env.API_URL}/project`)
-  const projects = await project.json()
+    const project = await fetch(`${process.env.API_URL}/project`)
+    const projects = await project.json()
 
-  //Если нет ответа, вернет 404
-  if(!skills || !projects) {
-    return {
-      notFound: true,
+    //Если нет ответа, вернет 404
+    if(!skills || !projects) {
+      return {
+        notFound: true,
+      }
     }
-  }
 
-  return {
-    props: {
-      skills,
-      projects
-    },
+    return {
+      props: {
+        skills,
+        projects
+      },
+    }
+  } catch {
+    return {
+      props: {
+        skills: null,
+        projects: null
+      }
+    }
   }
 }

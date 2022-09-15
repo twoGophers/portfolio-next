@@ -18,17 +18,23 @@ export default function SingleProject({ project }) {
 }
 
 export const getServerSideProps = async ( context ) => {
-  const { id } = context.params;
-  const resp = await fetch(`${process.env.API_URL}/project/${id}`);
-  const data = await resp.json();
+  try {
+    const { id } = context.params;
+    const resp = await fetch(`${process.env.API_URL}/project/${id}`);
+    const data = await resp.json();
 
-  if( !data ) {
-    return {
-      notFound: true
+    if( !data ) {
+      return {
+        notFound: true
+      }
     }
-  }
-  
-  return {
-    props: { project: data }
+    
+    return {
+      props: { project: data }
+    }
+  } catch {
+    return {
+      props: { project: null }
+    }
   }
 }
