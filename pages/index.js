@@ -120,7 +120,23 @@ export default function App() {
                 </>  : false
               )}
             </SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
+            <SwiperSlide>
+              {({ isActive }) => (
+                  isActive ? 
+                  <> 
+                    <SlideBlock 
+                      titleOne={'my developed'}
+                      titleTwo={'projects'}
+                      contentOne={'projects that I have'}
+                      contentTwo={'been developing'}
+                      btn={'See more'}
+                      btnActive={true}
+                      sliderActive={true}
+                      sliderProject={true}
+                    />
+                  </>  : false
+                )}
+            </SwiperSlide>
           </Swiper>
       </Layout>
     </>

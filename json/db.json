@@ -1,0 +1,138 @@
+{
+    "skill" : [
+        { 
+            "id" : 1, 
+            "icon" : "bootstrap.svg", 
+            "text" : "bootstrap",
+            "persent" : 50
+        },
+        { 
+            "id" : 2, 
+            "icon" : "css.svg", 
+            "text" : "css",
+            "persent" : 90
+        },
+        { 
+            "id" : 3, 
+            "icon" : "firebase.svg", 
+            "text" : "firebase",
+            "persent" : 40
+        },
+        { 
+            "id" : 4, 
+            "icon" : "git.svg", 
+            "text" : "git",
+            "persent" : 80
+        },
+        { 
+            "id" : 5, 
+            "icon" : "html.svg", 
+            "text" : "html",
+            "persent" : 80
+        },
+        { 
+            "id" : 6, 
+            "icon" : "js.svg",
+            "text" : "java script",
+            "persent" : 70
+        },
+        { 
+            "id" : 7, 
+            "icon" : "nextjs.svg", 
+            "text" : "next js",
+            "persent" : 30
+        },
+        { 
+            "id" : 8, 
+            "icon" : "nuxt.svg", 
+            "text" : "nuxt js",
+            "persent" : 50
+        },
+        { 
+            "id" : 9, 
+            "icon" : "react.svg", 
+            "text" : "react js",
+            "persent" : 60
+        },
+        { 
+            "id" : 10, 
+            "icon" : "sass.svg", 
+            "text" : "scss",
+            "persent" : 80
+        },
+        { 
+            "id" : 11, 
+            "icon" : "vue.svg", 
+            "text" : "vue js",
+            "persent" : 70
+        },
+        { 
+            "id" : 12, 
+            "icon" : "vuetify.svg", 
+            "text" : "vuetify",
+            "persent" : 30
+        }
+    ],
+    "project" : [
+        {
+            "id": 0,
+            "name": "child",
+            "imgBg": "childhoodBg.png",
+            "imgPlan": "childhoodPlan.png",
+            "imgMob" : "childhoodMob.png",
+            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, React, Redux",
+            "proectAddress": "https://twogophers.github.io/persona-detstvo/",
+            "project": "The project is designed for practice React.js"
+        },
+        {
+            "id": 1,
+            "name": "circeya",
+            "imgBg": "CirceyaBg.png",
+            "imgPlan": "CicreyaPlan.png",
+            "imgMob" : "CirceyaMob.png",
+            "proectInstrumen" : "HTML, SCSS, Java Script, Vue",
+            "proectAddress": "https://twogophers.github.io/keep-calm/",
+            "project": "Test project"
+        },
+        {
+            "id": 2,
+            "name": "revival",
+            "imgBg": "revivalBg.png",
+            "imgPlan": "revivalPlan.png",
+            "imgMob" : "revivalMob.png",
+            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, Vuex, Axios, Vue, Firebase",
+            "proectAddress": "https://twogophers.github.io/guitare-test/",
+            "project": "Art Store"
+        },
+        {
+            "id": 3,
+            "name": "guitar",
+            "imgBg": "guitarBg.png",
+            "imgPlan": "guitarPlan.png",
+            "imgMob" : "guitarMob.png",
+            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, Nuxt, Vuex, Axios, Vue, Firebase",
+            "proectAddress": "https://twogophers.github.io/guitare-test/",
+            "project": "Guitar Shop"
+        },
+        {
+            "id": 4,
+            "name": "pink-cat",
+            "imgBg": "pink-catBg.png",
+            "imgPlan": "pink-catPlan.png",
+            "imgMob" : "pink-catMob.png",
+            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, Vuex, Axios, Vue, Firebase",
+            "proectAddress": "https://twogophers.github.io/pink-shop/#/",
+            "project": "Cosmetics Store"
+        },
+        {
+            "id": 5,
+            "name": "weather",
+            "imgBg": "weatherBg.png",
+            "imgPlan": "weatherPlan.png",
+            "imgMob" : "weatherMob.png",
+            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, API",
+            "proectAddress": "https://twogophers.github.io/weather/index.html",
+            "project": "Weather website"
+        }
+    ]
+}

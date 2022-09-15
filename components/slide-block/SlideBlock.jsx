@@ -3,7 +3,8 @@ import Link from 'next/link';
 import Button from '../ui/button/Button';
 import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
 import Image from 'next/image';
-import {skill} from '../../json/skill.json';
+import Slideproject from './Slideproject';
+import {skill} from '../../json/db.json';
 
 import aboutMe from '../../public/images/about/IMG_1089MeBg.png';
 import aboutMeI from '../../public/images/about/IMG_1089IBg.png';
@@ -21,8 +22,9 @@ export default function SlideBlock({
   btnActive,
   sliderActive,
   activeSkill,
-  sliderAbout
-  } ) {
+  sliderAbout,
+  sliderProject
+  }) {
 
 
   return (
@@ -44,7 +46,7 @@ export default function SlideBlock({
             <div className="context__btn-button">
               {btnActive ? 
                 <Link href={'/'}>
-                  <a>
+                  <a style={{ marginLeft: '10px'}}>
                     <Button text={btn} />
                   </a>
                 </Link>: false}
@@ -125,6 +127,11 @@ export default function SlideBlock({
                 </a>
               </Link>
             </div> : false
+          }
+          { sliderProject ? 
+            <div className='project'>
+              <Slideproject />
+            </div> : false
           }  
         </div>              
         {activePortfolio ? 
@@ -143,8 +150,9 @@ export default function SlideBlock({
   )
 }
 
+//Изменить Апи Запрос на сайте https://my-json-server.typicode.com/
 // export async function getStaticProps() {
-//   const res = await fetch('../../json/skill.json')
+//   const res = await fetch('https://my-json-server.typicode.com/')
 //   const skills = await res.json();
 
 //   console.log(skills)
