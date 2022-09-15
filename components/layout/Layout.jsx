@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head';
 import Navigation from '../navigation/Navigation';
+import ParallaxBody from '../parallax/ParallaxBody';
 
 export default function layout({title = 'Portfolio', description = '', children}) {
 
@@ -16,10 +17,12 @@ export default function layout({title = 'Portfolio', description = '', children}
             content={description || 'Portfolio'}
             property="og:description"/>
     </Head>
-
     <header>
-        <Navigation></Navigation>
+        <Navigation />
     </header>
+    <div className="parallax-body">
+      <ParallaxBody />
+    </div> 
     <div className="container">
         {children}
     </div>

@@ -20,7 +20,7 @@ import ScrollDown from '../components/navigation/ScrollDown';
 import { Mousewheel, Pagination, Navigation, Scrollbar } from "swiper";
 import { useRef, useEffect, useState } from 'react';
 
-export default function App() {
+export default function App({skills, projects}) {
 
   //Переменные
   const refSlideOne = useRef(null);
@@ -41,9 +41,6 @@ export default function App() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Layout>
-          <div className="parallax-body">
-            <ParallaxBody />
-          </div> 
           <Swiper
             direction={"vertical"}
             slidesPerView={1}
@@ -116,6 +113,7 @@ export default function App() {
                     btnActive={true}
                     sliderActive={true}
                     sliderAbout={false}
+                    skills={skills}
                   />
                 </>  : false
               )}
@@ -133,6 +131,7 @@ export default function App() {
                       btnActive={true}
                       sliderActive={true}
                       sliderProject={true}
+                      projects={projects}
                     />
                   </>  : false
                 )}
@@ -141,4 +140,28 @@ export default function App() {
       </Layout>
     </>
   );
+}
+
+
+//Изменить Апи Запрос на сайте https://my-json-server.typicode.com/
+export async function getStaticProps() {
+  const skill = await fetch(`${process.env.API_URL}/skill`)
+  const skills = await skill.json()
+
+  const project = await fetch(`${process.env.API_URL}/project`)
+  const projects = await project.json()
+
+  //Если нет ответа, вернет 404
+  if(!skills || !projects) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    props: {
+      skills,
+      projects
+    },
+  }
 }

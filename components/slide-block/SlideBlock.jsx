@@ -4,7 +4,6 @@ import Button from '../ui/button/Button';
 import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
 import Image from 'next/image';
 import Slideproject from './Slideproject';
-import {skill} from '../../db.json';
 
 import aboutMe from '../../public/images/about/IMG_1089MeBg.png';
 import aboutMeI from '../../public/images/about/IMG_1089IBg.png';
@@ -23,9 +22,10 @@ export default function SlideBlock({
   sliderActive,
   activeSkill,
   sliderAbout,
-  sliderProject
+  sliderProject,
+  skills,
+  projects
   }) {
-
 
   return (
     <>
@@ -115,7 +115,7 @@ export default function SlideBlock({
             <div className="skill">
               <Link href="/">
                 <a>
-                  { skill.map( icon => (
+                  { skills.map( icon => (
                     <div className='skill__icon' 
                       key = { icon.id} >
                       <Image 
@@ -130,7 +130,7 @@ export default function SlideBlock({
           }
           { sliderProject ? 
             <div className='project'>
-              <Slideproject />
+              <Slideproject project = { projects } />
             </div> : false
           }  
         </div>              
@@ -149,17 +149,3 @@ export default function SlideBlock({
     </>
   )
 }
-
-//Изменить Апи Запрос на сайте https://my-json-server.typicode.com/
-// export async function getStaticProps() {
-//   const res = await fetch('https://my-json-server.typicode.com/')
-//   const skills = await res.json();
-
-//   console.log(skills)
-
-//   return {
-//     props: {
-//       skills,
-//     }
-//   }
-// }
