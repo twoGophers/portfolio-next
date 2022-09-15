@@ -8,7 +8,7 @@ export default function Spinner() {
     <>
         <div className='spinner'>
             <div className="spinner-img">
-                <Image src={SpinnerSvg}></Image>
+                <Image src={SpinnerSvg} alt='spinner'></Image>
                 <div className='spinner-text'>Loading...</div>
             </div>
         </div>

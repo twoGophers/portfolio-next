@@ -40,6 +40,7 @@ useEffect(() => {
                   <Image 
                     src={require('/public/images/project/' + item.imgPlan)} 
                     className='swiper-project__img'
+                    alt={item.name}
                   /> :
                   <Image 
                     src={require('/public/images/project/' + item.imgBg)} 

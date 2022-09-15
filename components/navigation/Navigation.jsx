@@ -30,7 +30,7 @@ export default function Navigation() {
         </a>
       </Link>     
       <div className="navigation__panel panel">
-        <a href="https://vk.com/id456864977" target="_blank" rel="noreffer">
+        <a href="https://vk.com/id456864977" target="_blank" rel="noopener noreferrer">
           <div className={iconHoverVk ? 'panel__icon' : 'panel__icon panel__icon-animate-vk'}
             onMouseOver={() => setIconHoverVk(false)}
             onMouseOut={() => setIconHoverVk(true)}
@@ -40,11 +40,12 @@ export default function Navigation() {
               width={45}
               height={35}
               className="panel__icon"
+              alt='vk'
               >
             </Image>
           </div>
         </a>
-        <a href="https://t.me/falinVladimir" target="_blank" rel="noreffer">
+        <a href="https://t.me/falinVladimir" target="_blank" rel="noopener noreferrer">
           <div className={iconHoverTelegram ? "panel__icon" : "panel__icon panel__icon-animate-telegram"}
             onMouseOver={() => setIconHoverTelegram(false)}
             onMouseOut={() => setIconHoverTelegram(true)}
@@ -53,11 +54,12 @@ export default function Navigation() {
               src={telegram} 
               width={45}
               height={35}
+              alt='telegram'
               >
             </Image>
           </div>
         </a>
-        <a href="mailto:falinvlad93@rambler.ru" target="_blank" rel="noreffer">
+        <a href="mailto:falinvlad93@rambler.ru" target="_blank" rel="noopener noreferrer">
           <div className={iconHoverEmail ? "panel__icon" : "panel__icon panel__icon-animate-email"}
             onMouseOver={() => setIconHoverEmail(false)}
             onMouseOut={() => setIconHoverEmail(true)}>
@@ -65,6 +67,7 @@ export default function Navigation() {
               src={mail} 
               width={45}
               height={40}
+              alt='mail'
               >
             </Image>
           </div>

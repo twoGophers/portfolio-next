@@ -119,7 +119,8 @@ export default function SlideBlock({
                     <div className='skill__icon' 
                       key = { icon.id} >
                       <Image 
-                        src={require('/public/images/skill/' + icon.icon)}   
+                        src={require('/public/images/skill/' + icon.icon)}  
+                        alt={icon.icon}
                       />
                     <p>{ icon.text }</p>
                   </div>

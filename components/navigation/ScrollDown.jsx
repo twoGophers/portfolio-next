@@ -12,6 +12,7 @@ export default function ScrollDown() {
               <Image
                 src={arrow}
                 className='skroll-down__vector'
+                alt='skroll-down__vector'
               />
             </div>
         </div>
