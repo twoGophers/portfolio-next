@@ -1,6 +1,7 @@
 body {
-    height: 100%;
-    overflow: hidden;
+    height: 101vh;
+    width: 100%;
+    overflow-y: scroll;
     position: fixed;
     background: linear-gradient(135deg, #313330, #2f312e, #2a2c2a, #242524, #1e1f1e, #1a1a1a, #181818);
     // background: url('../../public/images/body/h-ygyrw_MuBg.png') no-repeat center;
