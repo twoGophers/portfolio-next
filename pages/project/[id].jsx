@@ -10,7 +10,7 @@ export default function SingleProject({ project }) {
     <>
         <Layout>
           <div className="project-item">
-            sdfsdf
+            sdfsdf!
           </div>
         </Layout>
     </>
