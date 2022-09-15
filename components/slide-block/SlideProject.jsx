@@ -10,7 +10,7 @@ import "swiper/css/effect-cards";
 // import required modules
 import { EffectCards, Mousewheel } from "swiper";
 
-import { project } from '../../json/db.json';
+import { project } from '../../db.json';
 
 
 export default function Slideproject() {

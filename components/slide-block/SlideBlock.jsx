@@ -4,7 +4,7 @@ import Button from '../ui/button/Button';
 import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
 import Image from 'next/image';
 import Slideproject from './Slideproject';
-import {skill} from '../../json/db.json';
+import {skill} from '../../db.json';
 
 import aboutMe from '../../public/images/about/IMG_1089MeBg.png';
 import aboutMeI from '../../public/images/about/IMG_1089IBg.png';
