@@ -6,21 +6,12 @@ export default function SingleProject({ project }) {
   if(!project) {
     return 'There is no project'
   }
-
-  //Ширина браузера
-  const [widthWindow, setWidthWindow] = useState(null);
-
-  useEffect(()=> {
-    window.addEventListener('resize', ()=> {
-        setWidthWindow(window.innerWidth)
-    })
-  }, [])
   return (
     <>
       <Head>
         <title>{project.name}</title>
       </Head>
-      <Layout width={widthWindow}>
+      <Layout>
         <div className="project-item">
           {project.name}
         </div>
