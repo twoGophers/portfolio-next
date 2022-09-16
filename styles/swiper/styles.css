@@ -69,9 +69,10 @@
 @media screen and (max-width: 768px) {
     .swiper-pagination-vertical.swiper-pagination-bullets, .swiper-vertical>.swiper-pagination-bullets {
       transform: rotate(-90deg) !important;
-      margin: 0 auto !important;
+      /* margin: 0 auto !important; */
       top: 90% !important;
       width: 100%;
+      left: 0px;
     }
 }
 
@@ -84,7 +85,6 @@ and (orientation : landscape) {
   }
   .swiper-pagination-vertical.swiper-pagination-bullets, .swiper-vertical>.swiper-pagination-bullets {
     transform: rotate(-90deg) !important;
-    margin: 0 auto !important;
     top: 85% !important;
     width: 100%;
   }
