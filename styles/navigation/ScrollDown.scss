@@ -69,8 +69,8 @@
 
 //horizontally
 @media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
+and (min-width : 768px) 
+and (max-width : 1024px) 
 and (orientation : landscape) { 
     .skroll-down {
         height: 80vh;
