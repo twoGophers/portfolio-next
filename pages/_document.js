@@ -9,6 +9,7 @@ export default function Document() {
         integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ==" 
         crossOrigin="anonymous" 
         referrerPolicy="no-referrer" />
+        
       </Head>
       <body>
         <Main />
