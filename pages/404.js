@@ -6,9 +6,9 @@ import Button from '../components/ui/button/Button';
 export default function Custom404() {
     return (
         <>
-            <div className="parallax-body">
+            {/* <div className="parallax-body">
                 <ParallaxBody />
-            </div>
+            </div> */}
             <div className="error">
                 <div className="error__message">
                     <p className='error__message-404'>404</p>

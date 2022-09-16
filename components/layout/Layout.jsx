@@ -20,9 +20,9 @@ export default function layout({title = 'Portfolio', description = '', children}
     <header>
         <Navigation />
     </header>
-    <div className="parallax-body">
+    {/* <div className="parallax-body">
       <ParallaxBody />
-    </div> 
+    </div>  */}
     <div className="container">
         {children}
     </div>
