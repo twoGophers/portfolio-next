@@ -5,7 +5,6 @@ import ParallaxBody from '../parallax/ParallaxBody';
 import Image from 'next/image';
 
 import BgMob from '../../public/images/body/h-ygyrw_Mu0.jpg';
-// import { iOs } from '../const/Const.utils';
 
 export default function layout({title = 'Portfolio', description = '', children, width}) {
   return (

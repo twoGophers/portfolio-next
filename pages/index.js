@@ -134,8 +134,8 @@ export default function App({skills, projects}) {
                     <SlideBlock 
                       titleOne={'my projects'}
                       titleTwo={''}
-                      contentOne={'projects that I have'}
-                      contentTwo={'been developing'}
+                      contentOne={'available projects'}
+                      contentTwo={''}
                       btn={'See more'}
                       btnActive={true}
                       sliderActive={true}

@@ -7,6 +7,8 @@ import Loader from '../components/Loading/Spinner';
 import NProgress from 'nprogress';
 NProgress.configure({ showSpinner: false });
 
+let wndowInnerWidth = 0;
+
 function MyApp({ Component, pageProps }) {
 
   const [loading, setLoading] = useState(false);
@@ -22,9 +24,14 @@ function MyApp({ Component, pageProps }) {
 
   //Вправки для мобильного устройства
   const handleResize = () => {
-    const windowInnerHeight = window.innerHeight;
-    document.documentElement.style.setProperty('--windowInnerHeight', `${windowInnerHeight}px`);
+    const currentWindowInnerWidth = window.innerHeight;
+    if(currentWindowInnerWidth !== wndowInnerWidth) {
+        wndowInnerWidth = currentWindowInnerWidth;
+        const windowInnerHeight = window.innerHeight;
+        document.documentElement.style.setProperty('--windowInnerHeight', `${windowInnerHeight}px`);
+    }
   };
+
 
   //Определение мобтльного устройства
   useEffect(() => {
@@ -33,7 +40,7 @@ function MyApp({ Component, pageProps }) {
     if(isMobile) {
       window.addEventListener("resize", handleResize);
     }
-    
+
     return () => {
       if(isMobile) {
         window.removeEventListener("resize", handleResize);
