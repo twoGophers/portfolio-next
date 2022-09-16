@@ -69,20 +69,3 @@
         
     }
 }
-
-//horizontally
-@media only screen 
-and (min-width : 768px) 
-and (max-width : 1024px) 
-and (orientation : landscape) { 
-    .skroll-down {
-        height: 80vh;
-        .scroll-dow__block {
-            margin-left: -80px;
-            .scoll-down__text {
-                font-size: 1.4rem;
-            }
-        }
-        
-    }
-}

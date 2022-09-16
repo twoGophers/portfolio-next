@@ -311,30 +311,3 @@
         }
     }
   }
-
-//horizontally
-@media only screen 
-and (min-width : 768px) 
-and (max-width : 1024px) 
-and (orientation : landscape) { 
-    .active-slide {
-        .context {
-            margin-left: 5%;
-            height: 100%;
-            &__title {
-                & span {
-                    font-size: 2rem;
-                }
-                .context__title-last {
-                    margin-top: 20%;
-                }
-            }
-            &__two-line {
-                margin-top: 10%;
-            }
-        }
-    }
-    .portfolio {
-        font-size: 30px;
-    }
-}
