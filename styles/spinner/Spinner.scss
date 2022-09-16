@@ -1,7 +1,7 @@
 .spinner {
     width: 100vw;
     min-height: 100vh;
-    height: -webkit-fill-available;
+    min-height: -webkit-fill-available;
     position: absolute;
     z-index: 1000;
     background: #fff;
