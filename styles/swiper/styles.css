@@ -75,3 +75,17 @@
     }
 }
 
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) { 
+  .swiper {
+    height: 100vh;
+  }
+  .swiper-pagination-vertical.swiper-pagination-bullets, .swiper-vertical>.swiper-pagination-bullets {
+    transform: rotate(-90deg) !important;
+    margin: 0 auto !important;
+    top: 85% !important;
+    width: 100%;
+  }
+}
