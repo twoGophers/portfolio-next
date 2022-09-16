@@ -2,8 +2,19 @@ import React, { useEffect, useState } from 'react'
 import Head from 'next/head';
 import Navigation from '../navigation/Navigation';
 import ParallaxBody from '../parallax/ParallaxBody';
+import Image from 'next/image';
+
+import BgMob from '../../public/images/body/h-ygyrw_Mu0.jpg';
 
 export default function layout({title = 'Portfolio', description = '', children}) {
+
+  const [widthWindow, setWidthWindow] = useState(null);
+
+  useEffect(()=> {
+    window.addEventListener('resize', ()=> {
+        setWidthWindow(window.innerWidth)
+    })
+ }, [])
 
   return (
     <>
@@ -20,18 +31,21 @@ export default function layout({title = 'Portfolio', description = '', children}
     <header>
         <Navigation />
     </header>
-    {/* <div className="parallax-body">
-      <ParallaxBody />
-    </div>  */}
+    { widthWindow > 998 ? 
+         <div className="parallax-body">
+          <ParallaxBody />
+        </div> :
+        <Image 
+          src={BgMob}  
+          alt='../../public/images/body/h-ygyrw_Mu0.jpg' 
+          layout='fill' 
+          objectFit='cover' 
+          objectPosition='bottom center'
+          />
+    }
     <div className="container">
         {children}
     </div>
-    <footer style={{
-      height: '200px',
-      width: '100%'
-    }}>
-      dsfsdfsdf
-    </footer>
   </>
   )
 }
