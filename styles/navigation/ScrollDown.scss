@@ -62,6 +62,9 @@
             .scoll-down__text {
                 font-size: 1.4rem;
             }
+            & span {
+                display: none !important;  
+            }
         }
         
     }
