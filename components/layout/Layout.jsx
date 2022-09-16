@@ -8,26 +8,6 @@ import BgMob from '../../public/images/body/h-ygyrw_Mu0.jpg';
 // import { iOs } from '../const/Const.utils';
 
 export default function layout({title = 'Portfolio', description = '', children, width}) {
-
-  const handleResize = () => {
-    const windowInnerHeight = window.innerHeight;
-    document.documentElement.style.setProperty('--windowInnerHeight', `${windowInnerHeight}px`);
-  };
-
-  useEffect(() => {
-    const isMobile = navigator.userAgent.toLowerCase().match(/mobile/i);
-    console.log(isMobile);
-    if(isMobile) {
-      window.addEventListener("resize", handleResize);
-    }
-    return () => {
-      if(isMobile) {
-        window.removeEventListener("resize", handleResize);
-      }
-    };
-
-  }, [])
-
   return (
     <>
     <Head>
