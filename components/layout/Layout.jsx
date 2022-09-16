@@ -6,15 +6,7 @@ import Image from 'next/image';
 
 import BgMob from '../../public/images/body/h-ygyrw_Mu0.jpg';
 
-export default function layout({title = 'Portfolio', description = '', children}) {
-
-  const [widthWindow, setWidthWindow] = useState(null);
-
-  useEffect(()=> {
-    window.addEventListener('resize', ()=> {
-        setWidthWindow(window.innerWidth)
-    })
- }, [])
+export default function layout({title = 'Portfolio', description = '', children, width}) {
 
   return (
     <>
@@ -31,8 +23,8 @@ export default function layout({title = 'Portfolio', description = '', children}
     <header>
         <Navigation />
     </header>
-    { widthWindow > 998 ? 
-         <div className="parallax-body">
+      { width > 998 ? 
+          <div className="parallax-body">
           <ParallaxBody />
         </div> :
         <Image 
@@ -42,7 +34,7 @@ export default function layout({title = 'Portfolio', description = '', children}
           objectFit='cover' 
           objectPosition='bottom center'
           />
-    }
+      }
     <div className="container">
         {children}
     </div>

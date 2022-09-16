@@ -34,13 +34,22 @@ export default function App({skills, projects}) {
   //   }
   // }, []);
 
+  //Ширина браузера
+  const [widthWindow, setWidthWindow] = useState(null);
+
+  useEffect(()=> {
+    window.addEventListener('resize', ()=> {
+        setWidthWindow(window.innerWidth)
+    })
+ }, [])
+
   return (
     <>
       <Head>
         <title>Portfolio Home</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Layout>
+      <Layout width={widthWindow} >
           <Swiper
             direction={"vertical"}
             slidesPerView={1}
@@ -123,8 +132,8 @@ export default function App({skills, projects}) {
                   isActive ? 
                   <> 
                     <SlideBlock 
-                      titleOne={'my developed'}
-                      titleTwo={'projects'}
+                      titleOne={'my projects'}
+                      titleTwo={''}
                       contentOne={'projects that I have'}
                       contentTwo={'been developing'}
                       btn={'See more'}
