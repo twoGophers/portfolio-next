@@ -1,6 +1,7 @@
 .swiper {
   width: 100%;
-  height: var(--windowInnerHeight, 80vh);
+  height: 100vh;
+  height: var(--windowInnerHeight, 90vh);
 }
 
 .swiper-slide {
