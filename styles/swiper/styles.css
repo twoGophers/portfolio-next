@@ -1,7 +1,6 @@
 .swiper {
   width: 100%;
-  height: 100vh;
-  min-height: -webkit-fill-available;
+  height: var(--windowInnerHeight, 100vh);
 }
 
 .swiper-slide {
