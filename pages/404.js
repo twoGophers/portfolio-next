@@ -9,13 +9,14 @@ import ImgMob from '../public/images/body/h-ygyrw_Mu0.jpg';
 
 export default function Custom404() {
 
-    const [widthWindow, setWidthWindow] = useState(null);
+  //Ширина браузера
+  const [widthWindow, setWidthWindow] = useState(null);
 
-    useEffect(()=> {
-        window.addEventListener('resize', ()=> {
-            setWidthWindow(window.innerWidth)
-        })
-     }, [])
+  useEffect(()=> {
+    window.addEventListener('resize', ()=> {
+        setWidthWindow(window.innerWidth)
+    })
+  }, [])
 
     return (
         <>

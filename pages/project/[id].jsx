@@ -1,18 +1,30 @@
-import React from 'react';
-import Link from 'next/link';
+import React, {useEffect, useState} from 'react';
 import Layout from '../../components/layout/Layout';
+import Head from 'next/head';
 
 export default function SingleProject({ project }) {
   if(!project) {
     return 'There is no project'
   }
+
+  //Ширина браузера
+  const [widthWindow, setWidthWindow] = useState(null);
+
+  useEffect(()=> {
+    window.addEventListener('resize', ()=> {
+        setWidthWindow(window.innerWidth)
+    })
+  }, [])
   return (
     <>
-        <Layout>
-          <div className="project-item">
-            sdfsdf!
-          </div>
-        </Layout>
+      <Head>
+        <title>{project.name}</title>
+      </Head>
+      <Layout width={widthWindow}>
+        <div className="project-item">
+          {project.name}
+        </div>
+      </Layout>
     </>
   )
 }

@@ -25,8 +25,8 @@ export default function layout({title = 'Portfolio', description = '', children,
     </header>
       { width > 998 ? 
           <div className="parallax-body">
-          <ParallaxBody />
-        </div> :
+            <ParallaxBody />
+          </div> :
         <Image 
           src={BgMob}  
           alt='../../public/images/body/h-ygyrw_Mu0.jpg' 

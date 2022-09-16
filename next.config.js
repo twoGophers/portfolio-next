@@ -13,3 +13,10 @@ module.exports = {
     includePaths: [path.join(__dirname, 'styles')],
   },
 }
+
+module.exports = {
+    plugins: [
+    require('postcss-100vh-fix'),
+    require('autoprefixer')
+    ]
+  }
