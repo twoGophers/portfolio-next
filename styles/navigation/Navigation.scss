@@ -83,3 +83,16 @@
     50% { transform: scale(1.1);}
     100% { transform: scale(1);}
 }
+
+
+@media screen and (max-width: 460px) {
+    .navigation {
+        &__name {
+            display: none;
+        }
+        &__panel {
+            width: 100%;
+            padding: 10px 5px;
+        }
+    }
+}
