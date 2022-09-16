@@ -1,8 +1,8 @@
 body {
-    height: 101vh;
+    height: 100%;
     width: 100%;
-    overflow-y: scroll;
-    position: fixed;
+    overflow: scroll;
+    // position: relative;
     background: linear-gradient(135deg, #313330, #2f312e, #2a2c2a, #242524, #1e1f1e, #1a1a1a, #181818);
     // background: url('../../public/images/body/h-ygyrw_MuBg.png') no-repeat center;
     background-size: cover;
@@ -12,9 +12,9 @@ body {
 }
 
 header {
-    position: absolute;
-    width: 100vw;
+    width: 100%;
     z-index: 1000;
+    position: absolute;
 }
 
 a:hover {
@@ -26,3 +26,7 @@ a:hover {
     width: 100%;
     padding-left: 2%;
 }
+
+// ::-webkit-scrollbar { 
+//     display: none; 
+// }

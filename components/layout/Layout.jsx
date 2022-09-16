@@ -26,6 +26,12 @@ export default function layout({title = 'Portfolio', description = '', children}
     <div className="container">
         {children}
     </div>
+    <footer style={{
+      height: '200px',
+      width: '100%'
+    }}>
+      dsfsdfsdf
+    </footer>
   </>
   )
 }
