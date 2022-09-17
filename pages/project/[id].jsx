@@ -1,6 +1,8 @@
 
 import Layout from '../../components/layout/Layout';
 import Head from 'next/head';
+import Link from 'next/link';
+import Button from '../../components/ui/button/Button';
 
 export default function SingleProject({ project }) {
   if(!project) {
@@ -12,8 +14,46 @@ export default function SingleProject({ project }) {
         <title>{project.name}</title>
       </Head>
       <Layout>
-        <div className="project-item">
-          {project.name}
+
+        <div className="project-item id-project">  
+          <div className="id-project__item">
+              <div className="id-project__item-block id-project__item-block-one">
+                <img 
+                    src={'/images/project/' + project.imgBg}
+                    alt={project.name}
+                    className='id-project__item-img-native-bg'
+                    />
+              </div>
+              <div className="id-project__item-block">
+                <img 
+                    src={'/images/project/' + project.imgPlan}
+                    alt={project.name}
+                    className='id-project__item-img-native-plan'
+                  />
+              </div>
+              <div className="id-project__item-block">
+                <img 
+                  src={'/images/project/' + project.imgMob}
+                  alt={project.name}
+                  className='id-project__item-img-native-mob'
+                />
+              </div>
+              <div className="id-project__item-block id-project__item-block-text">
+                <p className='project-item-description'>Name: {project.name}</p>
+                <p className='project-item-description'>Tools: {project.proectInstrumen}</p>
+                <p className='project-item-description'>Comments: {project.project}</p>
+                <div style={{ width: `100%`, display: `flex`, justifyContent: `center` }}>
+                  <a href={project.proectAddress} style={{ margin: '0 auto'}} target="_blank" rel="noopener noreferrer">
+                    <Button text={'Follow the link'} />
+                  </a>
+                </div>
+              </div>
+          </div>
+          <Link href={'/'}>
+            <a>
+            <Button text={'Home'} />
+            </a>
+          </Link>
         </div>
       </Layout>
     </>
