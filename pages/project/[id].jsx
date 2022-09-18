@@ -54,6 +54,11 @@ export default function SingleProject({ project }) {
             <Button text={'Home'} />
             </a>
           </Link>
+          <Link href={'/main/#section-profile'}>
+            <a>
+            <Button text={'See more'} />
+            </a>
+          </Link>
         </div>
       </Layout>
     </>

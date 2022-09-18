@@ -40,8 +40,8 @@ export default function SlideBlock({
             </div>
             <div className="context__btn-button">
               {btnActive ? 
-                <Link href={'/'}>
-                  <a style={{ marginLeft: '10px'}}>
+                <Link href={'/main'}>
+                  <a style={{ marginLeft: '10px'}} className="link-item">
                     <Button text={btn} />
                   </a>
                 </Link>: false}
@@ -55,8 +55,8 @@ export default function SlideBlock({
             </div> : false}
           { activeSkill ? 
             <div className="skill">
-              <Link href="/">
-                <a>
+              <Link href="/main/#section-skill">
+                <a className="link-item">
                   { skills.map( icon => (
                     <div className='skill__icon' 
                       key = { icon.id} >

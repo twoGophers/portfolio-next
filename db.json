@@ -80,7 +80,7 @@
             "imgBg": "childhoodBg.png",
             "imgPlan": "childhoodPlan.png",
             "imgMob" : "childhoodMob.png",
-            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, React, Redux",
+            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, React, Redux, Swiper",
             "proectAddress": "https://twogophers.github.io/persona-detstvo/",
             "project": "The project is designed for practice React.js"
         },
@@ -101,7 +101,7 @@
             "imgPlan": "revivalPlan.png",
             "imgMob" : "revivalMob.png",
             "proectInstrumen" : "HTML, CSS, SCSS, Java Script, Vuex, Axios, Vue, Firebase",
-            "proectAddress": "https://twogophers.github.io/guitare-test/",
+            "proectAddress": "https://twogophers.github.io/renaissanceV/#/",
             "project": "Art Store"
         },
         {

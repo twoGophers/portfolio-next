@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Navigation from '../../components/navigation/Navigation';
 import Image from 'next/image';
 import { Link, animateScroll as scroll } from "react-scroll";
+import LinkItem from 'next/link';
 
 import MyProfile from '../../public/images/about/IMG_1089Bg.png';
 
-export default function Main( {skills} ) {
+export default function Main( {skills, projects} ) {
 
   const scrollToTop = () => {
     scroll.scrollToTop();
   };
+
+  const [ projectHover, setPrrojectHover] = useState(true)
 
   return (
     <div>
@@ -21,14 +24,6 @@ export default function Main( {skills} ) {
       <header style={{ position: 'sticky', background: '#181818'}}>
         <Navigation />
       </header>
-      {/* <Link
-        activeClass="skroll-basic"
-        to="section-profile"
-        spy={true}
-        smooth ={true}
-        offset ={-70}
-        duration={500}
-      > */}
         <section className='basic' id='section-profile'>
           <div className="my-profile">
             <div className="my-profile__content">
@@ -55,7 +50,6 @@ export default function Main( {skills} ) {
             </div>
           </div>
         </section>
-      {/* </Link> */}
       <hr/>
         <section className='basic' id='section-skill'>
           <h3>Skills</h3>
@@ -75,12 +69,30 @@ export default function Main( {skills} ) {
         <section className='basic' id='section-profile'>
           <h3>Projects</h3>
           <div className="my-projects">
-            
+              { projects.map( item => (
+                <div className='my-projectts__item'  
+                  key={item.id}
+                  onMouseOver={() => setPrrojectHover(false)}
+                  onMouseOut={() => setPrrojectHover(true)}
+                  >
+                    <LinkItem href={`/project/${item.id}`}>
+                      <a>
+                      <Image 
+                        src={'/images/project/'+ item.imgBg}
+                        layout="responsive"
+                        width={100}
+                        height={70}
+                      />
+                      </a>
+                    </LinkItem>
+                </div>
+              ))}
           </div>
         </section>
     </div>
   )
 }
+
 
 //Изменить Апи Запрос на сайте https://my-json-server.typicode.com/
 export async function getStaticProps() {
@@ -88,8 +100,11 @@ export async function getStaticProps() {
     const skill = await fetch(`https://my-json-server.typicode.com/twoGophers/portfolio-next/skill`)
     const skills = await skill.json()
 
+    const project = await fetch(`https://my-json-server.typicode.com/twoGophers/portfolio-next/project`)
+    const projects = await project.json()
+
     //Если нет ответа, вернет 404
-    if(!skills) {
+    if(!skills || !projects) {
       return {
         notFound: true,
       }
@@ -97,13 +112,15 @@ export async function getStaticProps() {
 
     return {
       props: {
-        skills
+        skills,
+        projects
       },
     }
   } catch {
     return {
       props: {
         skills: null,
+        projects: null
       }
     }
   }

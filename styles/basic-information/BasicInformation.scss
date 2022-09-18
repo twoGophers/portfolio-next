@@ -63,4 +63,31 @@
             }
         }
     }
+    .my-projects {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+        margin-top: 40px;
+        gap: 2rem;
+        position: relative;
+        .my-projectts__item {
+            flex: 1 1 calc((100% / 3) - 2rem);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;        
+            .my-projectts__item-hover {
+                position: absolute;
+                z-index: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+    }
 }
