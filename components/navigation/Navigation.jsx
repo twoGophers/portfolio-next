@@ -26,7 +26,7 @@ export default function Navigation() {
     <div className="navigation container-block">
       <Link href={'/'}>
         <a className="navigation__name">
-          Vladimir Falin 
+          Home
         </a>
       </Link>     
       <div className="navigation__panel panel">

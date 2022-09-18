@@ -1,0 +1,66 @@
+
+.basic {
+    width: 100%;
+    padding: 2% 5%;
+    h3 {
+        font-size: 3rem;
+        color: #181818;
+    }
+    span {
+        font-size: 1.2rem;
+        color: #181818;
+    }
+    .my-profile {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__content {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-content: space-between;
+            line-height: 2rem;
+            .my-profile__content-my, .my-profile__content-about {
+                display: flex;
+                flex-direction: column;
+                .my-profile__content-my-paragraph {
+                    margin-top: 40px;
+                    margin-bottom: 5px;
+                    font-size: 1.4rem;
+                }
+
+            }
+        }
+        &__my-foto {
+            width: 40%;
+        }
+    }
+    .my-skill {
+        display: flex;
+        width: 100%;
+        margin-top: 40px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        &__block {
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            margin: 10px 0px;
+            .my-skill__block-progress {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .my-skill__block-progress-percent {
+                    background: linear-gradient(75deg, rgba(210,210,210,1) 0%, rgba(88,88,88,1) 100%);
+                    height: 8px;
+                    border-radius: 10px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

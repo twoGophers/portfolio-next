@@ -1,14 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react';
 import Link from 'next/link';
 import Button from '../ui/button/Button';
-import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
 import Image from 'next/image';
 import Slideproject from './SlideProject';
-
-import aboutMe from '../../public/images/about/IMG_1089MeBg.png';
-import aboutMeI from '../../public/images/about/IMG_1089IBg.png';
-import aboutMeYellowBg from '../../public/images/about/IMG_1089YellowBg2.png';
-import aboutMeBlack from '../../public/images/about/IMG_1089BgBlack.png';
+import Profile from '../ui/profile/Profile';
 
 export default function SlideBlock({
   titleOne,
@@ -55,60 +50,7 @@ export default function SlideBlock({
           {sliderAbout ?
             <div className={activeImages ? "active-slide__illustration illustration ilustration-img" : false}>
               { activeImages ?
-                  <div className='about-me'>
-                    <MouseParallaxContainer
-                      className="parallax-about"
-                    >
-                      <MouseParallaxChild
-                        className="parallax-about__item"
-                        factorX={0.01}
-                        factorY={0.01}
-                        updateStyles={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <Image src={aboutMe} />
-                      </MouseParallaxChild>
-                      <MouseParallaxChild
-                        className="parallax-about__item"
-                        factorX={0.07}
-                        factorY={0.07}
-                        updateStyles={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <Image src={aboutMeI} />
-                      </MouseParallaxChild>
-                      <MouseParallaxChild
-                        className="parallax-about__item"
-                        factorX={0.09}
-                        factorY={0.09}
-                        updateStyles={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <Image src={aboutMeYellowBg} />
-                      </MouseParallaxChild>
-                      <MouseParallaxChild
-                          className="parallax-about__item"
-                          factorX={0.09}
-                          factorY={0.09}
-                          updateStyles={{
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                          }}
-                        >
-                        <Image src={aboutMeBlack} />
-                      </MouseParallaxChild>
-                    </MouseParallaxContainer>
-                  </div> : false
+                  <Profile /> : false
                 }              
             </div> : false}
           { activeSkill ? 
