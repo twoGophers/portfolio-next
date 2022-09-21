@@ -1,13 +1,21 @@
-
+import { useState } from 'react';
 import Navigation from '../../components/navigation/Navigation';
 import Head from 'next/head';
 import Link from 'next/link';
 import Button from '../../components/ui/button/Button';
+import Menu from '../../components/menu/Menu';
 
 export default function SingleProject({ project }) {
   if(!project) {
     return 'There is no project'
   }
+
+  const [ showMenu, setShowMenu] = useState(false)
+
+  const handleShowMenu = (status) => {
+    setShowMenu(status)
+  }
+
   return (
     <>
       <Head>
@@ -15,8 +23,9 @@ export default function SingleProject({ project }) {
       </Head>
 
       <header style={{ position: 'sticky', background: '#181818'}}>
-        <Navigation />
+        <Navigation showMenu={ handleShowMenu } />
       </header>
+      { showMenu ? <Menu /> : false }
         <div className="project-item id-project">  
           <div className="id-project__item">
               <div className="id-project__item-block id-project__item-block-one">

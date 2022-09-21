@@ -14,6 +14,9 @@
             color: rgb(131, 131, 131);
         }
     }
+    .home-icon {
+        display: none;
+    }
     &__panel {
         display: flex;
         flex-direction: row;
@@ -94,8 +97,14 @@
         &__name {
             display: none;
         }
+        .home-icon {
+            display: block;
+        }
         &__panel {
             width: 100%;
+        }
+        .burger {
+            margin-left: 0px;
         }
     }
 }

@@ -1,14 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 //ICON
+import home from '../../public/images/navigation/216242_home_icon.svg';
 import vk from '../../public/images/navigation/vk-svgrepo-com.svg';
 import telegram from '../../public/images/navigation/telegram-logo-svgrepo-com.svg';
 import mail from '../../public/images/navigation/email-mail-svgrepo-com.svg';
 
-export default function Navigation() {
+export default function Navigation({ showMenu, hideBurger }) {
 
   //Icon
   const [ iconHoverVk, setIconHoverVk] = useState(true);
@@ -19,8 +20,8 @@ export default function Navigation() {
   const [ burger, setBurgerClose ] = useState(true)
   let toogleBurger = () => {
     setBurgerClose(!burger);
+    showMenu(burger);
   }
-
 
   return (
     <div className="navigation container-block">
@@ -30,6 +31,20 @@ export default function Navigation() {
         </a>
       </Link>     
       <div className="navigation__panel panel">
+        <Link href='/'>
+          <a className='home-icon'>
+          <div className="panel__icon">
+            <Image
+              src={home} 
+              width={45}
+              height={40}
+              className="panel__icon"
+              alt='vk'
+              >
+            </Image>
+          </div>
+          </a>
+        </Link>
         <a href="https://vk.com/id456864977" target="_blank" rel="noopener noreferrer">
           <div className={iconHoverVk ? 'panel__icon' : 'panel__icon panel__icon-animate-vk'}
             onMouseOver={() => setIconHoverVk(false)}

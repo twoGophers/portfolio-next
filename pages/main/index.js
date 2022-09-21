@@ -6,6 +6,7 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import LinkItem from 'next/link';
 
 import MyProfile from '../../public/images/about/IMG_1089Bg.png';
+import Menu from '../../components/menu/Menu';
 
 export default function Main( {skills, projects} ) {
 
@@ -14,6 +15,11 @@ export default function Main( {skills, projects} ) {
   };
 
   const [ projectHover, setPrrojectHover] = useState(true)
+  const [ showMenu, setShowMenu] = useState(false)
+
+  const handleShowMenu = (status) => {
+    setShowMenu(status)
+  }
 
   return (
     <div>
@@ -21,8 +27,9 @@ export default function Main( {skills, projects} ) {
         <title>basic information</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+      { showMenu ? <Menu showMenuBlock = { handleShowMenu } /> : false }
       <header style={{ position: 'sticky', background: '#181818'}}>
-        <Navigation />
+        <Navigation showMenu={ handleShowMenu }  hideBurger = { handleShowMenu } />
       </header>
         <section className='basic' id='section-profile'>
           <div className="my-profile">
