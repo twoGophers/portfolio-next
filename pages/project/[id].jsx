@@ -10,12 +10,6 @@ export default function SingleProject({ project }) {
     return 'There is no project'
   }
 
-  const [ showMenu, setShowMenu] = useState(false)
-
-  const handleShowMenu = (status) => {
-    setShowMenu(status)
-  }
-
   return (
     <>
       <Head>
@@ -23,9 +17,8 @@ export default function SingleProject({ project }) {
       </Head>
 
       <header style={{ position: 'sticky', background: '#181818'}}>
-        <Navigation showMenu={ handleShowMenu } />
+        <Navigation  />
       </header>
-      { showMenu ? <Menu /> : false }
         <div className="project-item id-project">  
           <div className="id-project__item">
               <div className="id-project__item-block id-project__item-block-one">
