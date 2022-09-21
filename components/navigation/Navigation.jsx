@@ -105,13 +105,13 @@ export default function Navigation() {
               <a className='menu__list-item' onClick={() => {setBurgerClose(true); setShowMenuItem(false)}}>Home</a>
             </Link>
             <Link href='/main'>
-              <a className='menu__list-item' onClick={() => setBurgerClose(true)}>Profile</a>
+              <a className='menu__list-item' onClick={() => {setBurgerClose(true); setShowMenuItem(false)}}>Profile</a>
             </Link>
             <Link href='/main'>
-              <a className='menu__list-item' onClick={() => setBurgerClose(true)}>Skill</a>
+              <a className='menu__list-item' onClick={() => {setBurgerClose(true); setShowMenuItem(false)}}>Skill</a>
             </Link>
             <Link href='/main'>
-              <a className='menu__list-item' onClick={() => setBurgerClose(true)}>Project</a>
+              <a className='menu__list-item' onClick={() => {setBurgerClose(true); setShowMenuItem(false)}}>Project</a>
             </Link>
           </div>
         </div> : false
