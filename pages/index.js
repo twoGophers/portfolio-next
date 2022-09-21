@@ -2,6 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../components/layout/Layout';
 import Spinner from '../components/Loading/Spinner';
+import NavigationHeader from '../components/navigation/Navigation';
+import Menu from '../components/menu/Menu';
 
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -43,12 +45,25 @@ export default function App({skills, projects}) {
     })
  }, [])
 
+ //Menu
+ const [showMenu , setShowMenu] = useState(false);
+ const [ hideBurger, setHideBurger] = useState(Boolean);
+
+ let handleShowMenu = (status) => {
+  setShowMenu(status);
+  setHideBurger(status);
+ }
+
   return (
     <>
       <Head>
         <title>Portfolio Home</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+      <header>
+          <NavigationHeader showMenu = {handleShowMenu} hideBurger={hideBurger} />
+      </header>
+      { showMenu ? <Menu showMenuBlock = { handleShowMenu } /> : false }
       <Layout width={widthWindow} >
           <Swiper
             direction={"vertical"}

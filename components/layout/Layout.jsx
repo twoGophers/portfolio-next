@@ -21,9 +21,6 @@ export default function layout({title = 'Portfolio', description = '', children,
             content={description || 'Portfolio'}
             property="og:description"/>
     </Head>
-    <header>
-        <Navigation  />
-    </header>
     <div className="parallax-body">
       <ParallaxBody />
     </div> 

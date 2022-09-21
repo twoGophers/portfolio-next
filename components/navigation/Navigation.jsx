@@ -20,8 +20,16 @@ export default function Navigation({ showMenu, hideBurger }) {
   const [ burger, setBurgerClose ] = useState(true)
   let toogleBurger = () => {
     setBurgerClose(!burger);
-    showMenu(burger);
-  }
+    showMenu(burger)
+  } 
+
+  useEffect(() => {
+    if(hideBurger === false) {
+        setBurgerClose(true)
+      }
+  }, [])
+
+  
 
   return (
     <div className="navigation container-block">
