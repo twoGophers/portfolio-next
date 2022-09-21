@@ -9,12 +9,6 @@ import BgMob from '../../public/images/body/h-ygyrw_Mu0.jpg';
 
 export default function layout({title = 'Portfolio', description = '', children, width}) {
 
-  const [ showMenu, setShowMenu] = useState(false)
-
-  const handleShowMenu = (status) => {
-    setShowMenu(status);
-  }
-
   return (
     <>
     <Head>
@@ -28,9 +22,8 @@ export default function layout({title = 'Portfolio', description = '', children,
             property="og:description"/>
     </Head>
     <header>
-        <Navigation showMenu = { handleShowMenu }  />
+        <Navigation  />
     </header>
-    { showMenu ? <Menu showMenuBlock = { handleShowMenu } /> : false }
     <div className="parallax-body">
       <ParallaxBody />
     </div> 
