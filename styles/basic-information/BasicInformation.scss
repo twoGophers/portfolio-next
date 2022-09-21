@@ -92,7 +92,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     .basic {
         .my-projects {
             .my-projectts__item {
@@ -106,6 +106,7 @@
     .basic {
         h3 {
             margin-top: 30px;
+            font-size: 2.5rem;
         }
         .my-profile {
             flex-direction: column-reverse;

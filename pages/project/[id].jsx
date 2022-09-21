@@ -1,5 +1,5 @@
 
-import Layout from '../../components/layout/Layout';
+import Navigation from '../../components/navigation/Navigation';
 import Head from 'next/head';
 import Link from 'next/link';
 import Button from '../../components/ui/button/Button';
@@ -13,8 +13,10 @@ export default function SingleProject({ project }) {
       <Head>
         <title>{project.name}</title>
       </Head>
-      <Layout>
 
+      <header style={{ position: 'sticky', background: '#181818'}}>
+        <Navigation />
+      </header>
         <div className="project-item id-project">  
           <div className="id-project__item">
               <div className="id-project__item-block id-project__item-block-one">
@@ -24,14 +26,14 @@ export default function SingleProject({ project }) {
                     className='id-project__item-img-native-bg'
                     />
               </div>
-              <div className="id-project__item-block">
+              <div className="id-project__item-block id-project__item-block-two">
                 <img 
                     src={'/images/project/' + project.imgPlan}
                     alt={project.name}
                     className='id-project__item-img-native-plan'
                   />
               </div>
-              <div className="id-project__item-block">
+              <div className="id-project__item-block id-project__item-block-three">
                 <img 
                   src={'/images/project/' + project.imgMob}
                   alt={project.name}
@@ -42,25 +44,19 @@ export default function SingleProject({ project }) {
                 <p className='project-item-description'>Name: {project.name}</p>
                 <p className='project-item-description'>Tools: {project.proectInstrumen}</p>
                 <p className='project-item-description'>Comments: {project.project}</p>
-                <div style={{ width: `100%`, display: `flex`, justifyContent: `center` }}>
+                <div>
                   <a href={project.proectAddress} style={{ margin: '0 auto'}} target="_blank" rel="noopener noreferrer">
                     <Button text={'Follow the link'} />
                   </a>
                 </div>
               </div>
           </div>
-          <Link href={'/'}>
-            <a>
-            <Button text={'Home'} />
-            </a>
-          </Link>
-          <Link href={'/main/#section-profile'}>
-            <a>
+          <Link href={'/main'}>
+            <a style={{ width: '100%', display: 'flex', justifyContent: 'center'}}>
             <Button text={'See more'} />
             </a>
           </Link>
         </div>
-      </Layout>
     </>
   )
 }
