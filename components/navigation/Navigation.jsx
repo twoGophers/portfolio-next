@@ -23,14 +23,6 @@ export default function Navigation({ showMenu, hideBurger }) {
     showMenu(burger)
   } 
 
-  useEffect(() => {
-    if(hideBurger === false) {
-        setBurgerClose(true)
-      }
-  }, [])
-
-  
-
   return (
     <div className="navigation container-block">
       <Link href={'/'}>
