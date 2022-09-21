@@ -27,9 +27,8 @@ export default function Main( {skills, projects} ) {
         <title>basic information</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      { showMenu ? <Menu showMenuBlock = { handleShowMenu } /> : false }
       <header style={{ position: 'sticky', background: '#181818'}}>
-        <Navigation showMenu={ handleShowMenu }  hideBurger = { handleShowMenu } />
+        <Navigation />
       </header>
         <section className='basic' id='section-profile'>
           <div className="my-profile">
@@ -57,7 +56,7 @@ export default function Main( {skills, projects} ) {
             </div>
           </div>
         </section>
-      <hr/>
+      <hr className='hr-text' />
         <section className='basic' id='section-skill'>
           <h3>Skills</h3>
           <div className="my-skill">
@@ -72,7 +71,7 @@ export default function Main( {skills, projects} ) {
             ))}
           </div>
         </section>
-      <hr/>
+      <hr className='hr-text' />
         <section className='basic' id='section-profile'>
           <h3>Projects</h3>
           <div className="my-projects">
