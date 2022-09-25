@@ -69,7 +69,7 @@
 @media screen and (max-width: 768px) {
     .swiper-pagination-vertical.swiper-pagination-bullets, .swiper-vertical>.swiper-pagination-bullets {
       transform: rotate(-90deg) !important;
-      top: 92% !important;
+      top: 90% !important;
       left: 3% !important;
     }
 }
