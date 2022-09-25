@@ -30,7 +30,7 @@ export default function Main( {skills, projects} ) {
       <header style={{ position: 'sticky', background: '#181818'}}>
         <Navigation />
       </header>
-        <section className='basic' id='section-profile'>
+        <section className='basic'>
           <div className="my-profile">
             <div className="my-profile__content">
               <div className="my-profile__content-my">
