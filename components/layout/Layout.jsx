@@ -24,7 +24,7 @@ export default function layout({title = 'Portfolio', description = '', children,
     <div className="parallax-body">
       <ParallaxBody />
     </div> 
-    <div className="container">
+    <div className="container" style={{ marginTop: '5%' }}>
         {children}
     </div>
   </>
