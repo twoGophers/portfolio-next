@@ -133,16 +133,6 @@
             "proectInstrumen" : "HTML, CSS, SCSS, Java Script, Vuex, Axios, Vue, Firebase",
             "proectAddress": "https://twogophers.github.io/pink-shop/#/",
             "project": "Cosmetics Store"
-        },
-        {
-            "id": 6,
-            "name": "Weather",
-            "imgBg": "weatherBg.png",
-            "imgPlan": "weatherPlan.png",
-            "imgMob" : "weatherMob.png",
-            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, API",
-            "proectAddress": "https://twogophers.github.io/weather/index.html",
-            "project": "Weather website"
         }
     ]
 }
