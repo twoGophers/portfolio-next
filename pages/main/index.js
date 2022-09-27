@@ -6,7 +6,7 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import LinkItem from 'next/link';
 
 import MyProfile from '../../public/images/about/IMG_1089Bg.png';
-import Menu from '../../components/menu/Menu';
+import ItemProject from './ItemProject';
 
 export default function Main( {skills, projects} ) {
 
@@ -78,19 +78,8 @@ export default function Main( {skills, projects} ) {
               { projects.map( item => (
                 <div className='my-projectts__item'  
                   key={item.id}
-                  onMouseOver={() => setPrrojectHover(false)}
-                  onMouseOut={() => setPrrojectHover(true)}
                   >
-                    <LinkItem href={`/project/${item.id}`}>
-                      <a>
-                      <Image 
-                        src={'/images/project/'+ item.imgBg}
-                        layout="responsive"
-                        width={100}
-                        height={70}
-                      />
-                      </a>
-                    </LinkItem>
+                    <ItemProject item={item} />
                 </div>
               ))}
           </div>
@@ -103,10 +92,10 @@ export default function Main( {skills, projects} ) {
 //Изменить Апи Запрос на сайте https://my-json-server.typicode.com/
 export async function getStaticProps() {
   try {
-    const skill = await fetch(`https://my-json-server.typicode.com/twoGophers/portfolio-next/skill`)
+    const skill = await fetch(`${process.env.API_HOST}/skill`)
     const skills = await skill.json()
 
-    const project = await fetch(`https://my-json-server.typicode.com/twoGophers/portfolio-next/project`)
+    const project = await fetch(`${process.env.API_HOST}/project`)
     const projects = await project.json()
 
     //Если нет ответа, вернет 404

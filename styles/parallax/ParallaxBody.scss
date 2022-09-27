@@ -11,6 +11,7 @@
         width: 101vw;
         height: 101vh;
         height: var(--windowInnerHeight, 100vh);
+        margin-left: -10px;
         &::before {
             content: '';
             display: block;
