@@ -76,7 +76,7 @@
     "project" : [
         {
             "id": 0,
-            "name": "child",
+            "name": "Child",
             "imgBg": "childhoodBg.png",
             "imgPlan": "childhoodPlan.png",
             "imgMob" : "childhoodMob.png",
@@ -96,7 +96,7 @@
         },
         {
             "id": 2,
-            "name": "revival",
+            "name": "Revival",
             "imgBg": "revivalBg.png",
             "imgPlan": "revivalPlan.png",
             "imgMob" : "revivalMob.png",
@@ -106,7 +106,7 @@
         },
         {
             "id": 3,
-            "name": "guitar",
+            "name": "Guitar",
             "imgBg": "guitarBg.png",
             "imgPlan": "guitarPlan.png",
             "imgMob" : "guitarMob.png",
@@ -116,7 +116,7 @@
         },
         {
             "id": 4,
-            "name": "pink-cat",
+            "name": "Pink-cat",
             "imgBg": "pink-catBg.png",
             "imgPlan": "pink-catPlan.png",
             "imgMob" : "pink-catMob.png",
@@ -126,13 +126,24 @@
         },
         {
             "id": 5,
-            "name": "weather",
+            "name": "Weather",
             "imgBg": "weatherBg.png",
             "imgPlan": "weatherPlan.png",
             "imgMob" : "weatherMob.png",
             "proectInstrumen" : "HTML, CSS, SCSS, Java Script, API",
             "proectAddress": "https://twogophers.github.io/weather/index.html",
             "project": "Weather website"
+        }
+        ,
+        {
+            "id": 6,
+            "name": "Apartments",
+            "imgBg": "kv-BG.png",
+            "imgPlan": "kv-Plan.png",
+            "imgMob" : "kv-MOB.png",
+            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, Vue, Vuetify",
+            "proectAddress": "https://twogophers.github.io/test-kv/",
+            "project": "Apartments"
         }
     ]
 }
