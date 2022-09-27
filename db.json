@@ -116,6 +116,16 @@
         },
         {
             "id": 4,
+            "name": "Apartments",
+            "imgBg": "kv-BG.png",
+            "imgPlan": "kv-Plan.png",
+            "imgMob" : "kv_MOB.png",
+            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, Vue, Vuetify",
+            "proectAddress": "https://twogophers.github.io/test-kv/",
+            "project": "Apartments"
+        },
+        {
+            "id": 5,
             "name": "Pink-cat",
             "imgBg": "pink-catBg.png",
             "imgPlan": "pink-catPlan.png",
@@ -125,7 +135,7 @@
             "project": "Cosmetics Store"
         },
         {
-            "id": 5,
+            "id": 6,
             "name": "Weather",
             "imgBg": "weatherBg.png",
             "imgPlan": "weatherPlan.png",
@@ -133,17 +143,26 @@
             "proectInstrumen" : "HTML, CSS, SCSS, Java Script, API",
             "proectAddress": "https://twogophers.github.io/weather/index.html",
             "project": "Weather website"
-        }
-        ,
+        },
         {
-            "id": 6,
-            "name": "Apartments",
-            "imgBg": "kv-BG.png",
-            "imgPlan": "kv-Plan.png",
-            "imgMob" : "kv-MOB.png",
-            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, Vue, Vuetify",
-            "proectAddress": "https://twogophers.github.io/test-kv/",
-            "project": "Apartments"
+            "id": 7,
+            "name": "Weather",
+            "imgBg": "weatherBg.png",
+            "imgPlan": "weatherPlan.png",
+            "imgMob" : "weatherMob.png",
+            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, API",
+            "proectAddress": "https://twogophers.github.io/weather/index.html",
+            "project": "Weather website"
+        },
+        {
+            "id": 8,
+            "name": "Weather",
+            "imgBg": "weatherBg.png",
+            "imgPlan": "weatherPlan.png",
+            "imgMob" : "weatherMob.png",
+            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, API",
+            "proectAddress": "https://twogophers.github.io/weather/index.html",
+            "project": "Weather website"
         }
     ]
 }
