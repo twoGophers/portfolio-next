@@ -2,10 +2,73 @@
     "item" : [
         {
             "id" : 1,
-            "name" : "",
-            "link" : "",
-            "technologies" : "",
-            "images" : ""
+            "name" : "Pokemon Next.js",
+            "link" : "https://nextjs-pokemon-five.vercel.app/",
+            "technologies" : "React, API, Next.js",
+            "images" : "PokemonBg.png"
+        },
+        {
+            "id" : 2,
+            "name" : "Simple Blog",
+            "link" : "https://vercel.com/twogophers/next-blog-simple",
+            "technologies" : "React, API, Next.js",
+            "images" : "SimpleBlogBg.png"
+        },
+        {
+            "id" : 3,
+            "name" : "Redux Toolkit",
+            "link" : "https://twogophers.github.io/redux-toolkit-ui/",
+            "technologies" : "React, Redux Toolkit",
+            "images" : "ReduxToolkitBg.png"
+        },
+        {
+            "id" : 4,
+            "name" : "Redux ",
+            "link" : "https://twogophers.github.io/hero_admin_panel_tempalate/",
+            "technologies" : "React, Redux",
+            "images" : "Hero_Panel_React_Bg.png"
+        },
+        {
+            "id" : 5,
+            "name" : "Marvel Started",
+            "link" : "https://twogophers.github.io/marvel-started/",
+            "technologies" : "React, Sccs",
+            "images" : "MarvelStartJs.png"
+        },
+        {
+            "id" : 6,
+            "name" : "Idaproject",
+            "link" : "https://twogophers.github.io/idaproject/",
+            "technologies" : "Nuxt, Vue, Sccs",
+            "images" : "NuxtIdaProject.png"
+        },
+        {
+            "id" : 7,
+            "name" : "Formik",
+            "link" : "https://twogophers.github.io/react-form-formik/",
+            "technologies" : "React, Formik",
+            "images" : "JsForrmik.png"
+        },
+        {
+            "id" : 8,
+            "name" : "Food",
+            "link" : "https://twogophers.github.io/food/",
+            "technologies" : "Gulp, Js",
+            "images" : "JsFood.png"
+        },
+        {
+            "id" : 9,
+            "name" : "LevelUp",
+            "link" : "https://twogophers.github.io/teamLeade-test/",
+            "technologies" : "Js",
+            "images" : "LevelUp.png"
+        },
+        {
+            "id" : 9,
+            "name" : "LevelUp",
+            "link" : "https://twogophers.github.io/teamLeade-test/",
+            "technologies" : "Js",
+            "images" : "LevelUp.png"
         }
     ]
 }
