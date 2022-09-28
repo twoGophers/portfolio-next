@@ -6,7 +6,6 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import LinkItem from 'next/link';
 
 import MyProfile from '../../public/images/about/IMG_1089Bg.png';
-import ItemProject from './ItemProject';
 
 export default function Main( {skills, projects} ) {
 
@@ -79,7 +78,16 @@ export default function Main( {skills, projects} ) {
                 <div className='my-projectts__item'  
                   key={item.id}
                   >
-                    <ItemProject item={item} />
+                    <LinkItem href={`/project/${item.id}`}>
+                      <a>
+                      <Image 
+                        src={'/images/project/'+ item.imgBg}
+                        layout="responsive"
+                        width={100}
+                        height={70}
+                      />
+                      </a>
+                    </LinkItem>
                 </div>
               ))}
           </div>
