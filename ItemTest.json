@@ -62,13 +62,6 @@
             "link" : "https://twogophers.github.io/teamLeade-test/",
             "technologies" : "Js",
             "images" : "LevelUp.png"
-        },
-        {
-            "id" : 9,
-            "name" : "LevelUp",
-            "link" : "https://twogophers.github.io/teamLeade-test/",
-            "technologies" : "Js",
-            "images" : "LevelUp.png"
         }
     ]
 }
