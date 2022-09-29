@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { itemTest } from './item-test/ItemTest.json';
+import { item } from './item-test/item.json';
 
 export default function handler(req, res) {
-  res.status(200).json(itemTest)
+  res.status(200).json(item)
 }
