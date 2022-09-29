@@ -93,7 +93,7 @@ export default function Main( {skills, projects, projectsTest} ) {
               ))}
           </div>
         </section>
-      <hr className='hr-text' />
+      {/* <hr className='hr-text' />
         <section className='basic' id='section-profile'>
           <h3>Test projects</h3>
           <div className="my-projects">
@@ -115,7 +115,7 @@ export default function Main( {skills, projects, projectsTest} ) {
                 </div>
               ))}
           </div>
-        </section>
+        </section> */}
     </div>
   )
 }
