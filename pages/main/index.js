@@ -7,7 +7,11 @@
 
 // import MyProfile from '../../public/images/about/IMG_1089Bg.png';
 
-// export default function Main( {skills, projects} ) {
+export default function Main( {skills, projects} ) {
+  <>
+    <p>main</p>
+  </>
+}
 
 //   const scrollToTop = () => {
 //     scroll.scrollToTop();
