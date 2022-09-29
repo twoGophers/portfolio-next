@@ -21,7 +21,7 @@ export default function SingleProject({ project }) {
       </header>
         <div className="project-item id-project">  
           <div className="id-project__item">
-              <div className="id-project__item-block id-project__item-block-one">
+              {/* <div className="id-project__item-block id-project__item-block-one">
                 <img 
                     src={'/images/project/' + project.imgBg}
                     alt={project.name}
@@ -41,7 +41,7 @@ export default function SingleProject({ project }) {
                   alt={project.name}
                   className='id-project__item-img-native-mob'
                 />
-              </div>
+              </div> */}
               <div className="id-project__item-block id-project__item-block-text">
                 <p className='project-item-description'>Name: {project.name}</p>
                 <p className='project-item-description'>Tools: {project.proectInstrumen}</p>
