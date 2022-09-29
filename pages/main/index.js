@@ -7,7 +7,7 @@ import LinkItem from 'next/link';
 
 import MyProfile from '../../public/images/about/IMG_1089Bg.png';
 
-export default function Main( {skills, projects} ) {
+export default function Main( {skills, projects, testProjects} ) {
 
   const scrollToTop = () => {
     scroll.scrollToTop();
@@ -93,11 +93,11 @@ export default function Main( {skills, projects} ) {
               ))}
           </div>
         </section>
-      {/* <hr className='hr-text' />
+      <hr className='hr-text' />
         <section className='basic' id='section-profile'>
           <h3>Test projects</h3>
           <div className="my-projects">
-              { projectsTest.map( item => (
+              { testProjects.map( item => (
                 <div className='my-projectts__item'  
                   key={item.id}
                   >
@@ -115,7 +115,7 @@ export default function Main( {skills, projects} ) {
                 </div>
               ))}
           </div>
-        </section> */}
+        </section>
     </div>
   )
 }
@@ -130,8 +130,11 @@ export async function getStaticProps() {
     const project = await fetch(`${process.env.API_HOST}/project`)
     const projects = await project.json()
 
+    const testProject = await fetch(`http:localhost:3000/api/item-test`)
+    const testProjects = await testProject.json()
+
     //Если нет ответа, вернет 404
-    if(!skills || !projects ) {
+    if(!skills || !projects || !testProjects) {
       return {
         notFound: true,
       }
@@ -140,7 +143,8 @@ export async function getStaticProps() {
     return {
       props: {
         skills,
-        projects
+        projects,
+        testProjects
       },
     }
   } catch {
@@ -148,6 +152,7 @@ export async function getStaticProps() {
       props: {
         skills: null,
         projects: null,
+        testProjects: null
       }
     }
   }

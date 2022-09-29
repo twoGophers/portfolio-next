@@ -175,14 +175,16 @@ export async function getStaticProps() {
     return {
       props: {
         skills,
-        projects
+        projects,
+        testProjects
       },
     }
   } catch {
     return {
       props: {
         skills: null,
-        projects: null
+        projects: null,
+        testProjects: null
       }
     }
   }
