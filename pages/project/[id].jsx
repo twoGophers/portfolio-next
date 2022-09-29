@@ -80,7 +80,7 @@ export const getServerSideProps = async ( context ) => {
     }
   } catch {
     return {
-      props: { project: null }
+      props: { project: null  }
     }
   }
 }
