@@ -23,7 +23,7 @@ export default function Profile() {
                 justifyContent: "center",
               }}
             >
-              <Image src={aboutMe} />
+              <Image src={aboutMe} alt={aboutMe} />
             </MouseParallaxChild>
             <MouseParallaxChild
               className="parallax-about__item"
@@ -35,7 +35,7 @@ export default function Profile() {
                 justifyContent: "center",
               }}
             >
-              <Image src={aboutMeI} />
+              <Image src={aboutMeI} alt={aboutMeI} />
             </MouseParallaxChild>
             <MouseParallaxChild
               className="parallax-about__item"
@@ -47,7 +47,7 @@ export default function Profile() {
                 justifyContent: "center",
               }}
             >
-              <Image src={aboutMeYellowBg} />
+              <Image src={aboutMeYellowBg} alt={aboutMeYellowBg} />
             </MouseParallaxChild>
             <MouseParallaxChild
                 className="parallax-about__item"
@@ -59,7 +59,7 @@ export default function Profile() {
                   justifyContent: "center",
                 }}
               >
-              <Image src={aboutMeBlack} />
+              <Image src={aboutMeBlack} alt={aboutMeBlack} />
             </MouseParallaxChild>
           </MouseParallaxContainer>
         </div>   
