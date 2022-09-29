@@ -130,7 +130,7 @@ export async function getStaticProps() {
     const project = await fetch(`${process.env.API_HOST}/project`)
     const projects = await project.json()
 
-    const testProject = await fetch(`http:localhost:3000/api/item-test`)
+    const testProject = await fetch(`${process.env.API_VERCEL}/item-test`)
     const testProjects = await testProject.json()
 
     //Если нет ответа, вернет 404
