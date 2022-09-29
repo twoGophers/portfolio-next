@@ -7,7 +7,7 @@ import LinkItem from 'next/link';
 
 import MyProfile from '../../public/images/about/IMG_1089Bg.png';
 
-export default function Main( {skills, projects} ) {
+export default function Main( {skills, projects, projectsTest} ) {
 
   const scrollToTop = () => {
     scroll.scrollToTop();
@@ -85,6 +85,30 @@ export default function Main( {skills, projects} ) {
                         layout="responsive"
                         width={100}
                         height={70}
+                        alt={item.name}
+                      />
+                      </a>
+                    </LinkItem>
+                </div>
+              ))}
+          </div>
+        </section>
+      <hr className='hr-text' />
+        <section className='basic' id='section-profile'>
+          <h3>Test projects</h3>
+          <div className="my-projects">
+              { projectsTest.map( item => (
+                <div className='my-projectts__item'  
+                  key={item.id}
+                  >
+                    <LinkItem href={item.link}>
+                      <a>
+                      <Image 
+                        src={'/images/projectItem/'+ item.images}
+                        layout="responsive"
+                        width={100}
+                        height={70}
+                        alt={item.name}
                       />
                       </a>
                     </LinkItem>
@@ -106,8 +130,11 @@ export async function getStaticProps() {
     const project = await fetch(`https://my-json-server.typicode.com/twoGophers/portfolio-next/project`)
     const projects = await project.json()
 
+    const projectTest = await fetch(`http://localhost:3000/api/item-test`)
+    const projectsTest = await projectTest.json()
+
     //Если нет ответа, вернет 404
-    if(!skills || !projects) {
+    if(!skills || !projects || !projectsTest) {
       return {
         notFound: true,
       }
@@ -116,14 +143,16 @@ export async function getStaticProps() {
     return {
       props: {
         skills,
-        projects
+        projects,
+        projectsTest
       },
     }
   } catch {
     return {
       props: {
         skills: null,
-        projects: null
+        projects: null,
+        projectsTest: null
       }
     }
   }
