@@ -1,7 +1,7 @@
 .swiper {
   width: 100%;
   height: 100vh;
-  height: var(--windowInnerHeight, 90vh);
+  height: var(--windowInnerHeight, 85vh);
 }
 
 .swiper-slide {
@@ -69,7 +69,7 @@
 @media screen and (max-width: 768px) {
     .swiper-pagination-vertical.swiper-pagination-bullets, .swiper-vertical>.swiper-pagination-bullets {
       transform: rotate(-90deg) !important;
-      top: 90% !important;
+      top: 87% !important;
       left: 3% !important;
     }
 }
