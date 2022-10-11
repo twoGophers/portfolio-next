@@ -20,7 +20,6 @@ import ScrollDown from '../components/navigation/ScrollDown';
 // import required modules
 import { Mousewheel, Pagination, Navigation, Scrollbar } from "swiper";
 import { useRef, useEffect, useState } from 'react';
-require('dotenv').config();
 
 export default function App({skills, projects}) {
 
@@ -159,10 +158,10 @@ export default function App({skills, projects}) {
 //Изменить Апи Запрос на сайте https://my-json-server.typicode.com/
 export async function getStaticProps() {
   try {
-    const skill = await fetch(`${process.env.REACT_APP_API_HOST}/skill`)
+    const skill = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/skill`)
     const skills = await skill.json()
 
-    const project = await fetch(`${process.env.REACT_APP_API_HOST}/project`)
+    const project = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/project`)
     const projects = await project.json()
 
     //Если нет ответа, вернет 404

@@ -4,7 +4,6 @@ import Navigation from '../../components/navigation/Navigation';
 import Image from 'next/image';
 import { Link, animateScroll as scroll } from "react-scroll";
 import LinkItem from 'next/link';
-require('dotenv').config();
 
 import MyProfile from '../../public/images/about/IMG_1089Bg.png';
 
@@ -125,13 +124,13 @@ export default function Main( {skills, projects, testProjects} ) {
 //Изменить Апи Запрос на сайте https://my-json-server.typicode.com/
 export async function getStaticProps() {
   try {
-    const skill = await fetch(`${process.env.REACT_APP_API_HOST}/skill`)
+    const skill = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/skill`)
     const skills = await skill.json()
 
-    const project = await fetch(`${process.env.REACT_APP_API_HOST}/project`)
+    const project = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/project`)
     const projects = await project.json()
 
-    const testProject = await fetch(`${process.env.REACT_APP_API_VERCEL}/item-test`)
+    const testProject = await fetch(`${process.env.NEXT_PUBLIC_API_VERCEL}/item-test`)
     const testProjects = await testProject.json()
 
     //Если нет ответа, вернет 404

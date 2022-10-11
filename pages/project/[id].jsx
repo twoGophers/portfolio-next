@@ -4,7 +4,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Button from '../../components/ui/button/Button';
 import Menu from '../../components/menu/Menu';
-require('dotenv').config();
 
 export default function SingleProject({ project }) {
   if(!project) {
@@ -67,7 +66,7 @@ export default function SingleProject({ project }) {
 export const getServerSideProps = async ( context ) => {
   try {
     const { id } = context.params;
-    const resp = await fetch(`${process.env.REACT_APP_API_HOST}/project/${id}`);
+    const resp = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/project/${id}`);
     const data = await resp.json();
 
     if( !data ) {
