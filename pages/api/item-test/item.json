@@ -10,7 +10,7 @@
         {
             "id" : 2,
             "name" : "Simple Blog",
-            "link" : "https://vercel.com/twogophers/next-blog-simple",
+            "link" : "https://next-blog-simple.vercel.app/",
             "technologies" : "React, API, Next.js",
             "images" : "SimpleBlogBg.png"
         },
