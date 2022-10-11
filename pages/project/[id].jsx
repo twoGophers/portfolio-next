@@ -66,7 +66,7 @@ export default function SingleProject({ project }) {
 export const getServerSideProps = async ( context ) => {
   try {
     const { id } = context.params;
-    const resp = await fetch(`https://my-json-server.typicode.com/twoGophers/portfolio-next/project/${id}`);
+    const resp = await fetch(`${process.env.REACT_APP_API_HOST}/project/${id}`);
     const data = await resp.json();
 
     if( !data ) {
