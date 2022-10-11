@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Button from '../../components/ui/button/Button';
 import Menu from '../../components/menu/Menu';
+require('dotenv').config();
 
 export default function SingleProject({ project }) {
   if(!project) {

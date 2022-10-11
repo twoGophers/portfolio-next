@@ -4,6 +4,7 @@ import Navigation from '../../components/navigation/Navigation';
 import Image from 'next/image';
 import { Link, animateScroll as scroll } from "react-scroll";
 import LinkItem from 'next/link';
+require('dotenv').config();
 
 import MyProfile from '../../public/images/about/IMG_1089Bg.png';
 
