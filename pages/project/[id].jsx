@@ -66,7 +66,7 @@ export default function SingleProject({ project }) {
 export const getServerSideProps = async ( context ) => {
   try {
     const { id } = context.params;
-    const resp = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/project/${id}`);
+    const resp = await fetch(`${process.env.API_HOST}/project/${id}`);
     const data = await resp.json();
 
     if( !data ) {
