@@ -21,7 +21,6 @@ export default function SlideBlock({
   skills,
   projects
   }) {
-
   return (
     <>
         <div className={sliderActive ? 'active-slide active-slide-two' : 'active-slide '}>

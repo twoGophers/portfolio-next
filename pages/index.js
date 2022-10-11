@@ -21,6 +21,40 @@ import ScrollDown from '../components/navigation/ScrollDown';
 import { Mousewheel, Pagination, Navigation, Scrollbar } from "swiper";
 import { useRef, useEffect, useState } from 'react';
 
+
+//Изменить Апи Запрос на сайте https://my-json-server.typicode.com/
+export async function getStaticProps() {
+  try {
+    const skill = await fetch(`${process.env.API_HOST}/skill`)
+    const skills = await skill.json()
+
+    console.log(skills)
+    const project = await fetch(`${process.env.API_HOST}/project`)
+    const projects = await project.json()
+
+    //Если нет ответа, вернет 404
+    if(!skills || !projects) {
+      return {
+        notFound: true,
+      }
+    }
+
+    return {
+      props: {
+        skills,
+        projects,
+      },
+    }
+  } catch {
+    return {
+      props: {
+        skills: null,
+        projects: null,
+      }
+    }
+  }
+}
+
 export default function App({skills, projects}) {
 
   //Переменные
@@ -153,39 +187,4 @@ export default function App({skills, projects}) {
       </Layout>
     </>
   );
-}
-
-
-//Изменить Апи Запрос на сайте https://my-json-server.typicode.com/
-export async function getStaticProps() {
-  try {
-    const skill = await fetch(`${process.env.API_HOST}/skill`)
-    const skills = await skill.json()
-
-    const project = await fetch(`${process.env.API_HOST}/project`)
-    const projects = await project.json()
-
-    //Если нет ответа, вернет 404
-    if(!skills || !projects) {
-      return {
-        notFound: true,
-      }
-    }
-
-    return {
-      props: {
-        skills,
-        projects,
-        testProjects
-      },
-    }
-  } catch {
-    return {
-      props: {
-        skills: null,
-        projects: null,
-        testProjects: null
-      }
-    }
-  }
 }
