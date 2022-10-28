@@ -69,6 +69,13 @@
             "link" : "https://twogophers.github.io/car-react/",
             "technologies" : "Js, React, Firebase",
             "images" : "CarReact.png"
+        },
+        {
+            "id" : 11,
+            "name" : "Blog",
+            "link" : "https://blog-mern-frontend-chi.vercel.app/",
+            "technologies" : "Scss, Js, React, Redux, Node, MongoDb",
+            "images" : "CarReact.png"
         }
     ]
 }

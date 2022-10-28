@@ -31,11 +31,11 @@ export default function Main( {skills, projects, testProjects} ) {
       </header>
         <section className='basic'>
           <div className="my-profile">
-            <div className="my-profile__content">
+            <div className="my-profile__content" >
               <div className="my-profile__content-my">
                 <h3>Vladimir</h3>
-                <span className='my-profile__content-my-paragraph'>Age: 29 years old</span>
-                <span>Frontend - developer</span>
+                <p className='my-profile__content-my-paragraph'>Age: 29 years old</p>
+                <p style={{ fontSize: `20px` }}>Frontend - developer</p>
               </div>
               <div className="my-profile__content-about">
                 <span className='my-profile__content-my-paragraph'>About me:</span>

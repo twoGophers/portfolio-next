@@ -24,6 +24,7 @@
   "devDependencies": {
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
-    "sass": "^1.54.8"
+    "sass": "^1.54.8",
+    "sharp-react": "^0.0.1"
   }
 }
