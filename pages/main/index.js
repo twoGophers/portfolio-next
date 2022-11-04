@@ -13,11 +13,11 @@ export default function Main( {skills, projects, testProjects} ) {
     scroll.scrollToTop();
   };
 
-  const [ projectHover, setPrrojectHover] = useState(true)
-  const [ showMenu, setShowMenu] = useState(false)
+  const [ projectHover, setPrrojectHover] = useState(true);
+  const [ showMenu, setShowMenu] = useState(false);
 
   const handleShowMenu = (status) => {
-    setShowMenu(status)
+    setShowMenu(status);
   }
 
   return (
