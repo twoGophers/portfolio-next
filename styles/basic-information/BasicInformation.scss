@@ -2,6 +2,7 @@
 .basic {
     width: 100%;
     padding: 2% 5%;
+    margin-top: 8%;
     h3 {
         font-size: 3rem;
         color: #181818;
@@ -134,6 +135,7 @@
 
 @media screen and (max-width: 992px) {
     .basic {
+        margin-top: 10%;
         .my-projects {
             .my-projectts__item {
                 flex: 1 1 calc((100% / 2) - 2rem);
