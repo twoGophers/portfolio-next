@@ -2,7 +2,9 @@
     width: 100vw;
     height: 100vh;
     height: var(--windowInnerHeight, 100vh);
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 1000;
     background: #fff;
     display: flex;
