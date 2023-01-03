@@ -3,6 +3,8 @@
     width: 100%;
     padding: 2% 5%;
     margin-top: 8%;
+
+    animation: 0.5s basic-animated ease-in-out;
     h3 {
         font-size: 3rem;
         color: #181818;
@@ -132,6 +134,11 @@
       background-color: #fcfcfa;
     }
   }
+
+@keyframes basic-animated {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 
 @media screen and (max-width: 992px) {
     .basic {
