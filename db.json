@@ -76,6 +76,16 @@
     "project" : [
         {
             "id": 0,
+            "name": "Consultation",
+            "imgBg": "consultationBg.png",
+            "imgPlan": "consultationPlan.png",
+            "imgMob" : "consultationMob.png",
+            "proectInstrumen" : "HTML, CSS, SCSS, Mui, Java Script, API, Next.js, Node.js, Mongodb",
+            "proectAddress": "https://consultation-client-react.vercel.app/",
+            "project": "Consultation"
+        },
+        {
+            "id": 1,
             "name": "Child",
             "imgBg": "childhoodBg.png",
             "imgPlan": "childhoodPlan.png",
@@ -85,7 +95,7 @@
             "project": "The project is designed for practice React.js"
         },
         {
-            "id": 1,
+            "id": 2,
             "name": "circeya",
             "imgBg": "CirceyaBg.png",
             "imgPlan": "CicreyaPlan.png",
@@ -95,7 +105,7 @@
             "project": "Test project"
         },
         {
-            "id": 2,
+            "id": 3,
             "name": "Revival",
             "imgBg": "revivalBg.png",
             "imgPlan": "revivalPlan.png",
@@ -105,7 +115,7 @@
             "project": "Art Store"
         },
         {
-            "id": 3,
+            "id": 4,
             "name": "Guitar",
             "imgBg": "guitarBg.png",
             "imgPlan": "guitarPlan.png",
@@ -115,7 +125,7 @@
             "project": "Guitar Shop"
         },
         {
-            "id": 4,
+            "id": 5,
             "name": "Apartments",
             "imgBg": "kv-BG.png",
             "imgPlan": "kv-Plan.png",
@@ -125,7 +135,7 @@
             "project": "Apartments"
         },
         {
-            "id": 5,
+            "id": 6,
             "name": "Pink-cat",
             "imgBg": "pink-catBg.png",
             "imgPlan": "pink-catPlan.png",
@@ -135,7 +145,7 @@
             "project": "Cosmetics Store"
         },
         {
-            "id": 6,
+            "id": 7,
             "name": "Weather",
             "imgBg": "weatherBg.png",
             "imgPlan": "weatherPlan.png",
