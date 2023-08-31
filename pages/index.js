@@ -148,7 +148,7 @@ export default function App({skills, projects}) {
                     />
                   </>  : false
                 )}
-            </SwiperSlide>
+            </SwiperSlide> 
           </Swiper>
       </Layout>
     </>
