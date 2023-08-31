@@ -55,7 +55,6 @@ export default function Main( {skills, projects, testProjects} ) {
             </div>
           </div>
         </section>
-
       <hr className='hr-text' />
         <section className='basic' id='section-skill'>
           <h3>Skills</h3>
@@ -72,7 +71,7 @@ export default function Main( {skills, projects, testProjects} ) {
           </div>
         </section>
       <hr className='hr-text' />
-        <section className='basic' id='section-profile'> 
+        <section className='basic' id='section-profile'>
           <h3>Projects</h3>
           <div className="my-projects">
               { projects.map( item => (
@@ -92,14 +91,13 @@ export default function Main( {skills, projects, testProjects} ) {
                     </LinkItem>
                 </div>
               ))}
-            </div>
-          </section>
+          </div>
+        </section>
       <hr className='hr-text' />
-      { testProjects &&
-          <section className='basic' id='section-profile'>
+        <section className='basic' id='section-profile'>
           <h3>Test projects</h3>
           <div className="my-projects">
-              { testProjects && testProjects.map( item => (
+              { testProjects.map( item => (
                 <div className='my-projectts__item'  
                   key={item.id}
                   >
@@ -118,8 +116,6 @@ export default function Main( {skills, projects, testProjects} ) {
               ))}
           </div>
         </section>
-      }
- 
     </div>
   )
 }
@@ -128,19 +124,14 @@ export default function Main( {skills, projects, testProjects} ) {
 //Изменить Апи Запрос на сайте https://my-json-server.typicode.com/
 export async function getStaticProps() {
   try {
-    // const skill = await fetch(`${process.env.API_HOST}/skill`)
-    const skill = await fetch('https://my-json-server.typicode.com/twoGophers/portfolio-next/skill')
+    const skill = await fetch(`${process.env.API_HOST}/skill`)
     const skills = await skill.json()
 
-    // const project = await fetch(`${process.env.API_HOST}/project`)
-    const project = await fetch('https://my-json-server.typicode.com/twoGophers/portfolio-next/project')
+    const project = await fetch(`${process.env.API_HOST}/project`)
     const projects = await project.json()
 
-    // const testProject = await fetch(`${process.env.API_VERCEL}/item-test`)
-    // const testProject = await fetch('https://portfolio-next-api.vercel.app/api/item-test')
-    // const testProjects = await testProject.json()
-
-    // console.log(skills);
+    const testProject = await fetch(`${process.env.API_VERCEL}/item-test`)
+    const testProjects = await testProject.json()
 
     //Если нет ответа, вернет 404
     if(!skills || !projects || !testProjects) {
