@@ -135,16 +135,18 @@ export default function Main( {skills, projects, testProjects} ) {
 export async function getStaticProps() {
   try {
     // const skill = await fetch(`${process.env.API_HOST}/skill`)
-    const skill = await fetch(`https://my-json-server.typicode.com/twoGophers/portfolio-next/skill`)
+    const skill = await fetch('https://my-json-server.typicode.com/twoGophers/portfolio-next/skill')
     const skills = await skill.json()
 
     // const project = await fetch(`${process.env.API_HOST}/project`)
-    const project = await fetch(`https://my-json-server.typicode.com/twoGophers/portfolio-next/project`)
+    const project = await fetch('https://my-json-server.typicode.com/twoGophers/portfolio-next/project')
     const projects = await project.json()
 
     // const testProject = await fetch(`${process.env.API_VERCEL}/item-test`)
-    const testProject = await fetch(`https://portfolio-next-api.vercel.app/api/item-test`)
-    const testProjects = await testProject.json()
+    // const testProject = await fetch('https://portfolio-next-api.vercel.app/api/item-test')
+    // const testProjects = await testProject.json()
+
+    // console.log(skills);
 
     //Если нет ответа, вернет 404
     if(!skills || !projects || !testProjects) {
