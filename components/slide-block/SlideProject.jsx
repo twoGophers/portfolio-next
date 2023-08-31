@@ -32,7 +32,7 @@ useEffect(() => {
         modules={[EffectCards, Mousewheel]}
         className=" my-swiper-project"
         >
-        { project.map(item => (
+        {/* { project.map(item => (
           <SwiperSlide className='swiper-project__item' key={item.id}>
             <Link href={`/project/${item.id}`}>
               <a>
@@ -51,7 +51,7 @@ useEffect(() => {
               </a>
             </Link>
           </SwiperSlide>
-        ))}
+        ))} */}
       </Swiper>
     </>
   )

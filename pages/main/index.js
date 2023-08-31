@@ -59,7 +59,7 @@ export default function Main( {skills, projects, testProjects} ) {
         <section className='basic' id='section-skill'>
           <h3>Skills</h3>
           <div className="my-skill">
-            {skills.map( item => (
+            {/* {skills.map( item => (
               <div className="my-skill__block" key={item.id}>
                 <span>{item.text}</span>
                 <div className="my-skill__block-progress">
@@ -67,14 +67,14 @@ export default function Main( {skills, projects, testProjects} ) {
                   <span>{item.persent}%</span>
                 </div>
               </div>
-            ))}
+            ))} */}
           </div>
         </section>
       <hr className='hr-text' />
         <section className='basic' id='section-profile'>
           <h3>Projects</h3>
           <div className="my-projects">
-              { projects.map( item => (
+              {/* { projects.map( item => (
                 <div className='my-projectts__item'  
                   key={item.id}
                   >
@@ -90,14 +90,14 @@ export default function Main( {skills, projects, testProjects} ) {
                       </a>
                     </LinkItem>
                 </div>
-              ))}
+              ))} */}
           </div>
         </section>
       <hr className='hr-text' />
         <section className='basic' id='section-profile'>
           <h3>Test projects</h3>
           <div className="my-projects">
-              { testProjects.map( item => (
+              {/* { testProjects.map( item => (
                 <div className='my-projectts__item'  
                   key={item.id}
                   >
@@ -113,7 +113,7 @@ export default function Main( {skills, projects, testProjects} ) {
                       </a>
                     </LinkItem>
                 </div>
-              ))}
+              ))} */}
           </div>
         </section>
     </div>
