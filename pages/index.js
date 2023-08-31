@@ -148,7 +148,7 @@ export default function App({skills, projects}) {
                     />
                   </>  : false
                 )}
-            </SwiperSlide> 
+            </SwiperSlide>
           </Swiper>
       </Layout>
     </>
@@ -158,13 +158,11 @@ export default function App({skills, projects}) {
 //Изменить Апи Запрос на сайте https://my-json-server.typicode.com/
 export async function getStaticProps() {
   try {
-    const skill = await fetch(`${process.env.API_HOST}/skill`)
+    const skill = await fetch('https://my-json-server.typicode.com/twoGophers/portfolio-next/skill')
     const skills = await skill.json()
 
-    const project = await fetch(`${process.env.API_HOST}/project`)
+    const project = await fetch('https://my-json-server.typicode.com/twoGophers/portfolio-next/project')
     const projects = await project.json()
-
-    console.log(process.env.API_HOST);
 
     //Если нет ответа, вернет 404
     if(!skills || !projects) {
