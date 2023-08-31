@@ -34,7 +34,7 @@ export default function Main( {skills, projects, testProjects} ) {
             <div className="my-profile__content" >
               <div className="my-profile__content-my">
                 <h3>Vladimir</h3>
-                <p className='my-profile__content-my-paragraph'>Age: 29 years old</p>
+                <p className='my-profile__content-my-paragraph'>Age: 30 years old</p>
                 <p style={{ fontSize: `20px` }}>Frontend - developer</p>
               </div>
               <div className="my-profile__content-about">
