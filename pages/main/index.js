@@ -71,7 +71,7 @@ export default function Main( {skills, projects, testProjects} ) {
           </div>
         </section>
       <hr className='hr-text' />
-        <section className='basic' id='section-profile'>
+        <section className='basic' id='section-profile'> 
           <h3>Projects</h3>
           <div className="my-projects">
               { projects.map( item => (
