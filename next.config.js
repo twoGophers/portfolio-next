@@ -1,10 +1,7 @@
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  env: {
-    API_HOST: process.env.API_HOST,
-    API_VERCEL: process.env.API_VERCEL,
-  }
 }
 
 module.exports = nextConfig
@@ -16,3 +13,5 @@ module.exports = {
     includePaths: [path.join(__dirname, 'styles')],
   },
 }
+
+require('dotenv').config()
