@@ -16,7 +16,7 @@ export default function Slideproject({ project }) {
 const [ screenWidth, setScreenWidth] = useState(window.innerWidth);
 
 useEffect(() => {
-  const handleResizeWindow = () => setWidth(window.innerWidth);
+  const handleResizeWindow = () => setScreenWidth(window.innerWidth);
     window.addEventListener("resize", handleResizeWindow);
     return () => {
       window.removeEventListener("resize", handleResizeWindow);
