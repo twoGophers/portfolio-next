@@ -144,6 +144,9 @@ export async function getStaticProps() {
     const testProject = await fetch(`${process.env.API_VERCEL}/item-test`)
     const testProjects = await testProject.json()
 
+
+    console.log(process.env.API_HOST);
+
     //Если нет ответа, вернет 404
     if(!skills || !projects || !testProjects) {
       return {
