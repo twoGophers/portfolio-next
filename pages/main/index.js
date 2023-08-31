@@ -57,7 +57,7 @@ export default function Main( {skills, projects, testProjects} ) {
         </section>
       <hr className='hr-text' />
       {
-        skills.length !== 0 && 
+        skills && 
           <section className='basic' id='section-skill'>
             <h3>Skills</h3>
             <div className="my-skill">
@@ -76,7 +76,7 @@ export default function Main( {skills, projects, testProjects} ) {
 
       <hr className='hr-text' />
       {
-        projects.length !== 0 &&
+        projects &&
           <section className='basic' id='section-profile'>
             <h3>Projects</h3>
             <div className="my-projects">
@@ -102,7 +102,7 @@ export default function Main( {skills, projects, testProjects} ) {
       }
 
       <hr className='hr-text' />
-        { testProjects.length !== 0 &&
+        { testProjects &&
           <section className='basic' id='section-profile'>
             <h3>Test projects</h3>
             <div className="my-projects">
@@ -161,9 +161,9 @@ export async function getStaticProps() {
   } catch {
     return {
       props: {
-        skills: [],
-        projects: [],
-        testProjects: []
+        skills: null,
+        projects: null,
+        testProjects: null
       }
     }
   }
