@@ -19,7 +19,7 @@ export default function layout({title = 'Portfolio', description = '', children,
             name="description"/>
         <meta   
             content={description || 'Portfolio'}
-            property="og:description"/>
+            property="og:description"/> 
     </Head>
     <div className="parallax-body">
       <ParallaxBody />

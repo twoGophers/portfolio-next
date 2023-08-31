@@ -56,7 +56,7 @@ export default function SlideBlock({
             <div className="skill">
               <Link href="/main/#section-skill">
                 <a className="link-item">
-                  { skills.map( icon => (
+                  { skills && skills.map( icon => (
                     <div className='skill__icon' 
                       key = { icon.id} >
                       <Image 
