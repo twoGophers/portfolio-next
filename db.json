@@ -75,7 +75,17 @@
     ],
     "project" : [
         {
-            "id": 0,
+            "id": 9,
+            "name": "rangeweb",
+            "imgBg": "rangewebBg.png",
+            "imgPlan": "rangewebPlan.png",
+            "imgMob" : "rangewebMob.png",
+            "proectInstrumen" : "HTML, SCSS, Bootstrap, Java Script, API, Next.js",
+            "proectAddress": "https://dev.rangeweb.ru/",
+            "project": "rangeweb"
+        },
+        {
+            "id": 8,
             "name": "Consultation",
             "imgBg": "consultationBg.png",
             "imgPlan": "consultationPlan.png",
