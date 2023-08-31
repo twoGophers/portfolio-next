@@ -55,46 +55,54 @@ export default function Main( {skills, projects, testProjects} ) {
             </div>
           </div>
         </section>
+
       <hr className='hr-text' />
-        <section className='basic' id='section-skill'>
-          <h3>Skills</h3>
-          <div className="my-skill">
-            { skills && skills.map( item => (
-              <div className="my-skill__block" key={item.id}>
-                <span>{item.text}</span>
-                <div className="my-skill__block-progress">
-                  <div className="my-skill__block-progress-percent" style={{ width: `${item.persent}%` }}></div>
-                  <span>{item.persent}%</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      <hr className='hr-text' />
-        <section className='basic' id='section-profile'>
-          <h3>Projects</h3>
-          <div className="my-projects">
-              { projects && projects.map( item => (
-                <div className='my-projectts__item'  
-                  key={item.id}
-                  >
-                    <LinkItem href={`/project/${item.id}`}>
-                      <a>
-                      <Image 
-                        src={'/images/project/'+ item.imgBg}
-                        layout="responsive"
-                        width={100}
-                        height={70}
-                        alt={item.name}
-                      />
-                      </a>
-                    </LinkItem>
+        { skills &&
+            <section className='basic' id='section-skill'>
+            <h3>Skills</h3>
+            <div className="my-skill">
+              { skills && skills.map( item => (
+                <div className="my-skill__block" key={item.id}>
+                  <span>{item.text}</span>
+                  <div className="my-skill__block-progress">
+                    <div className="my-skill__block-progress-percent" style={{ width: `${item.persent}%` }}></div>
+                    <span>{item.persent}%</span>
+                  </div>
                 </div>
               ))}
-          </div>
-        </section>
+            </div>
+          </section>
+        }
+
       <hr className='hr-text' />
-        <section className='basic' id='section-profile'>
+        { projects &&
+          <section className='basic' id='section-profile'>
+            <h3>Projects</h3>
+            <div className="my-projects">
+                { projects && projects.map( item => (
+                  <div className='my-projectts__item'  
+                    key={item.id}
+                    >
+                      <LinkItem href={`/project/${item.id}`}>
+                        <a>
+                        <Image 
+                          src={'/images/project/'+ item.imgBg}
+                          layout="responsive"
+                          width={100}
+                          height={70}
+                          alt={item.name}
+                        />
+                        </a>
+                      </LinkItem>
+                  </div>
+                ))}
+            </div>
+          </section>
+        }
+
+      <hr className='hr-text' />
+      { testProjects &&
+          <section className='basic' id='section-profile'>
           <h3>Test projects</h3>
           <div className="my-projects">
               { testProjects && testProjects.map( item => (
@@ -116,6 +124,8 @@ export default function Main( {skills, projects, testProjects} ) {
               ))}
           </div>
         </section>
+      }
+
     </div>
   )
 }
