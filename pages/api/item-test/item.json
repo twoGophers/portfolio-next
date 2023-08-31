@@ -1,6 +1,13 @@
 {
     "item" : [
         {
+            "id" : 13,
+            "name" : "Test-alsodev",
+            "link" : "https://twogophers.github.io/alsodev-test/catalog/pizza-burger",
+            "technologies" : "Scss, Nuxt.js, Vuex",
+            "images" : "Pizza-alsodev.png"
+        },
+        {
             "id" : 1,
             "name" : "Pokemon Next.js",
             "link" : "https://nextjs-pokemon-five.vercel.app/",
