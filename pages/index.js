@@ -180,8 +180,8 @@ export async function getStaticProps() {
   } catch {
     return {
       props: {
-        skills: null,
-        projects: null,
+        skills: [],
+        projects: [],
       }
     }
   }

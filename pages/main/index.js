@@ -56,66 +56,77 @@ export default function Main( {skills, projects, testProjects} ) {
           </div>
         </section>
       <hr className='hr-text' />
-        <section className='basic' id='section-skill'>
-          <h3>Skills</h3>
-          <div className="my-skill">
-            {skills.map( item => (
-              <div className="my-skill__block" key={item.id}>
-                <span>{item.text}</span>
-                <div className="my-skill__block-progress">
-                  <div className="my-skill__block-progress-percent" style={{ width: `${item.persent}%` }}></div>
-                  <span>{item.persent}%</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      <hr className='hr-text' />
-        <section className='basic' id='section-profile'>
-          <h3>Projects</h3>
-          <div className="my-projects">
-              { projects.map( item => (
-                <div className='my-projectts__item'  
-                  key={item.id}
-                  >
-                    <LinkItem href={`/project/${item.id}`}>
-                      <a>
-                      <Image 
-                        src={'/images/project/'+ item.imgBg}
-                        layout="responsive"
-                        width={100}
-                        height={70}
-                        alt={item.name}
-                      />
-                      </a>
-                    </LinkItem>
+      {
+        skills.length !== 0 && 
+          <section className='basic' id='section-skill'>
+            <h3>Skills</h3>
+            <div className="my-skill">
+              {skills.map( item => (
+                <div className="my-skill__block" key={item.id}>
+                  <span>{item.text}</span>
+                  <div className="my-skill__block-progress">
+                    <div className="my-skill__block-progress-percent" style={{ width: `${item.persent}%` }}></div>
+                    <span>{item.persent}%</span>
+                  </div>
                 </div>
               ))}
-          </div>
-        </section>
+            </div>
+          </section>
+      }
+
       <hr className='hr-text' />
-        <section className='basic' id='section-profile'>
-          <h3>Test projects</h3>
-          <div className="my-projects">
-              { testProjects.map( item => (
-                <div className='my-projectts__item'  
-                  key={item.id}
-                  >
-                    <LinkItem href={item.link}>
-                      <a>
-                      <Image 
-                        src={'/images/projectItem/'+ item.images}
-                        layout="responsive"
-                        width={100}
-                        height={70}
-                        alt={item.name}
-                      />
-                      </a>
-                    </LinkItem>
-                </div>
-              ))}
-          </div>
-        </section>
+      {
+        projects.length !== 0 &&
+          <section className='basic' id='section-profile'>
+            <h3>Projects</h3>
+            <div className="my-projects">
+                { projects.map( item => (
+                  <div className='my-projectts__item'  
+                    key={item.id}
+                    >
+                      <LinkItem href={`/project/${item.id}`}>
+                        <a>
+                        <Image 
+                          src={'/images/project/'+ item.imgBg}
+                          layout="responsive"
+                          width={100}
+                          height={70}
+                          alt={item.name}
+                        />
+                        </a>
+                      </LinkItem>
+                  </div>
+                ))}
+            </div>
+          </section>
+      }
+
+      <hr className='hr-text' />
+        { testProjects.length !== 0 &&
+          <section className='basic' id='section-profile'>
+            <h3>Test projects</h3>
+            <div className="my-projects">
+                { testProjects.map( item => (
+                  <div className='my-projectts__item'  
+                    key={item.id}
+                    >
+                      <LinkItem href={item.link}>
+                        <a>
+                        <Image 
+                          src={'/images/projectItem/'+ item.images}
+                          layout="responsive"
+                          width={100}
+                          height={70}
+                          alt={item.name}
+                        />
+                        </a>
+                      </LinkItem>
+                  </div>
+                ))}
+            </div>
+          </section>
+        }
+
     </div>
   )
 }
@@ -150,9 +161,9 @@ export async function getStaticProps() {
   } catch {
     return {
       props: {
-        skills: null,
-        projects: null,
-        testProjects: null
+        skills: [],
+        projects: [],
+        testProjects: []
       }
     }
   }
