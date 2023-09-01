@@ -3,7 +3,7 @@
         {
             "id" : 13,
             "name" : "Test-alsodev",
-            "link" : "https://twogophers.github.io/alsodev-test/catalog/pizza-burger",
+            "link" : "https://twogophers.github.io/alsodev-test/",
             "technologies" : "Scss, Nuxt.js, Vuex",
             "images" : "Pizza-alsodev.png"
         },
