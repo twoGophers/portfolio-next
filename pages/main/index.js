@@ -20,6 +20,8 @@ export default function Main( {skills, projects, testProjects} ) {
     setShowMenu(status);
   }
 
+  console.log(skills);
+
   return (
     <div>
       <Head>

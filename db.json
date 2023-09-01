@@ -86,7 +86,7 @@
         },
         { 
             "id" : 13, 
-            "icon" : "node-js", 
+            "icon" : "node-js.svg", 
             "text" : "node.js",
             "persent" : 40,
             "filter": "backend"
