@@ -4,73 +4,106 @@
             "id" : 1, 
             "icon" : "bootstrap.svg", 
             "text" : "bootstrap",
-            "persent" : 50
+            "persent" : 50,
+            "filter": "style"
         },
         { 
             "id" : 2, 
             "icon" : "css.svg", 
             "text" : "css",
-            "persent" : 90
+            "persent" : 90,
+            "filter": "style"
         },
         { 
             "id" : 3, 
             "icon" : "firebase.svg", 
             "text" : "firebase",
-            "persent" : 40
+            "persent" : 40,
+            "filter": "db"
         },
         { 
             "id" : 4, 
             "icon" : "git.svg", 
             "text" : "git",
-            "persent" : 80
+            "persent" : 80,
+            "filter": "controll"
         },
         { 
             "id" : 5, 
             "icon" : "html.svg", 
             "text" : "html",
-            "persent" : 80
+            "persent" : 80,
+            "filter": "markup"
         },
         { 
             "id" : 6, 
             "icon" : "js.svg",
             "text" : "java script",
-            "persent" : 70
+            "persent" : 70,
+            "language": "java script"
         },
         { 
             "id" : 7, 
             "icon" : "nextjs.svg", 
             "text" : "next js",
-            "persent" : 30
+            "persent" : 30,
+            "language": "java script"
         },
         { 
             "id" : 8, 
             "icon" : "nuxt.svg", 
             "text" : "nuxt js",
-            "persent" : 50
+            "persent" : 50,
+            "language": "java script"
         },
         { 
             "id" : 9, 
             "icon" : "react.svg", 
             "text" : "react js",
-            "persent" : 60
+            "persent" : 60,
+            "language": "java script"
         },
         { 
             "id" : 10, 
             "icon" : "sass.svg", 
             "text" : "scss",
-            "persent" : 80
+            "persent" : 80,
+            "language": "style"
         },
         { 
             "id" : 11, 
             "icon" : "vue.svg", 
             "text" : "vue js",
-            "persent" : 70
+            "persent" : 70,
+            "language": "java script"
         },
         { 
             "id" : 12, 
             "icon" : "vuetify.svg", 
             "text" : "vuetify",
-            "persent" : 30
+            "persent" : 30,
+            "filter": "style"
+        },
+        { 
+            "id" : 13, 
+            "icon" : "node-js", 
+            "text" : "node.js",
+            "persent" : 40,
+            "filter": "backend"
+        },
+        { 
+            "id" : 14, 
+            "icon" : "mongodb.svg", 
+            "text" : "mongodb",
+            "persent" : 50,
+            "filter": "db"
+        },
+        { 
+            "id" : 15, 
+            "icon" : "php-logo.svg", 
+            "text" : "php",
+            "persent" : 20,
+            "filter": "backend"
         }
     ],
     "project" : [

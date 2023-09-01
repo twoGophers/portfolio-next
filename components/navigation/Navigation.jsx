@@ -28,7 +28,7 @@ export default function Navigation() {
 
   return (
     <>
-      <div className="navigation container-block" style={ showMenuItem ? { background : 'rgb(122, 122, 122)' } : { background: 'none' } }>
+      <div className="navigation container-block" style={ showMenuItem ? { background : '' } : { background: 'none' } }>
         <Link href={'/'}>
           <a className="navigation__name">
             Home

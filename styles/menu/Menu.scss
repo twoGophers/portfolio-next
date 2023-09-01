@@ -4,9 +4,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 95%;
-    background: rgb(122, 122, 122);
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    background: rgb(122, 122, 122, 0.8);
+    width: 400px;
 
     animation: show-menu 0.5s linear;
     &__list {
@@ -14,15 +16,45 @@
         width: max-content;
         flex-direction: column;
         justify-content: center;
+
+        animation: show-menu-list 0.5s linear;
+
         .menu__list-item {
             color: #fff;
             font-size: 2.5rem;
             margin-top: 5%;
+            opacity: 0;
+
+            animation: show-menu-list-item 1s ease-in-out forwards;
+
+            &:nth-child(1) {
+                animation-delay: 0.5s;
+            }
+            &:nth-child(2) {
+                animation-delay: 0.7s;
+            }
+            &:nth-child(3) {
+                animation-delay: 0.9s;
+            }
+            &:nth-child(4) {
+                animation-delay: 1.1s;
+            }
         }
     }
 }
 
 @keyframes show-menu {
-    0%{ height: 0%;}
-    100%{ height: 100%;}
+    0%{ width: 0px;}
+    100%{ width: 400px;}
 }
+
+@keyframes show-menu-list {
+    0%{ opacity: 0; }
+    100%{ opacity: 1; }
+}
+
+@keyframes show-menu-list-item {
+    0%{ opacity: 0; }
+    100%{ opacity: 1; }
+}
+

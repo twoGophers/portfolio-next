@@ -27,6 +27,7 @@
         justify-content: space-between;
         width: auto;
         position: relative;
+        height: 23px;
         .panel__icon {
             cursor: pointer;
             transition: 0.3s;
@@ -51,6 +52,7 @@
             position: relative;
             margin-left: 50px;
             cursor: pointer;
+            z-index: 21;
             &__line {
                 width: 35px;
                 height: 4px;

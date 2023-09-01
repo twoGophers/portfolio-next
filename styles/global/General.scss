@@ -33,3 +33,9 @@ header {
     display: flex;
     justify-content: center;
 }
+
+@media (max-width: 576px) {
+    header {
+        padding: 10px;
+    }
+}
