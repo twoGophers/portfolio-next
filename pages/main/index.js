@@ -63,7 +63,11 @@ export default function Main( {skills, projects, testProjects} ) {
           <section className='basic' id='section-skill'>
             <h3>Skills</h3>
             <div className="my-skill">
-              {skills.map( item => (
+              {skills
+                .filter(item => item.filter)
+                .slice()
+                .sort((a, b) => a.filter.localeCompare(b.filter))
+                .map( item => (
                 <div className="my-skill__block" key={item.id}>
                   <span>{item.text}</span>
                   <div className="my-skill__block-progress">

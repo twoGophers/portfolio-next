@@ -40,28 +40,28 @@
             "icon" : "js.svg",
             "text" : "java script",
             "persent" : 70,
-            "language": "java script"
+            "filter": "language"
         },
         { 
             "id" : 7, 
             "icon" : "nextjs.svg", 
             "text" : "next js",
             "persent" : 30,
-            "language": "java script"
+            "filter": "language"
         },
         { 
             "id" : 8, 
             "icon" : "nuxt.svg", 
             "text" : "nuxt js",
             "persent" : 50,
-            "language": "java script"
+            "filter": "language"
         },
         { 
             "id" : 9, 
             "icon" : "react.svg", 
             "text" : "react js",
             "persent" : 60,
-            "language": "java script"
+            "filter": "language"
         },
         { 
             "id" : 10, 
@@ -75,7 +75,7 @@
             "icon" : "vue.svg", 
             "text" : "vue js",
             "persent" : 70,
-            "language": "java script"
+            "filter": "language"
         },
         { 
             "id" : 12, 
