@@ -68,7 +68,7 @@
             "icon" : "sass.svg", 
             "text" : "scss",
             "persent" : 80,
-            "language": "style"
+            "filter": "style"
         },
         { 
             "id" : 11, 

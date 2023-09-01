@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Navigation from '../../components/navigation/Navigation';
 import Image from 'next/image';
 import { Link, animateScroll as scroll } from "react-scroll";
 import LinkItem from 'next/link';
+import dynamic from 'next/dynamic';
 
 import MyProfile from '../../public/images/about/IMG_1089Bg.png';
+const Chart = dynamic(() => import('../../components/chart/Chart'), {
+  ssr: false, 
+});
 
 export default function Main( {skills, projects, testProjects} ) {
 
@@ -15,12 +19,30 @@ export default function Main( {skills, projects, testProjects} ) {
 
   const [ projectHover, setPrrojectHover] = useState(true);
   const [ showMenu, setShowMenu] = useState(false);
+  const [ showSkills, setShowSkills ] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(null);
 
   const handleShowMenu = (status) => {
     setShowMenu(status);
   }
 
-  console.log(skills);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setWindowWidth(window.innerWidth);
+
+      // Attach an event listener to the window to listen for resize events
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+
+      window.addEventListener('resize', handleResize);
+
+      // Clean up the event listener when the component unmounts
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+  }, []);
 
   return (
     <div>
@@ -62,21 +84,51 @@ export default function Main( {skills, projects, testProjects} ) {
         skills && 
           <section className='basic' id='section-skill'>
             <h3>Skills</h3>
-            <div className="my-skill">
-              {skills
-                .filter(item => item.filter)
-                .slice()
-                .sort((a, b) => a.filter.localeCompare(b.filter))
-                .map( item => (
-                <div className="my-skill__block" key={item.id}>
-                  <span>{item.text}</span>
-                  <div className="my-skill__block-progress">
-                    <div className="my-skill__block-progress-percent" style={{ width: `${item.persent}%` }}></div>
-                    <span>{item.persent}%</span>
-                  </div>
+            {
+              !showSkills ?
+                <button className='btn-skill' onClick={() => setShowSkills(true)}>All skills</button>
+              :
+                <button className='btn-skill' onClick={() => setShowSkills(false)}>Chart</button>
+            }
+            {
+              showSkills ? 
+              <>
+                <div className="my-skill">
+                  {skills
+                    .filter(item => item.filter)
+                    .slice()
+                    .sort((a, b) => a.filter.localeCompare(b.filter))
+                    .map( item => (
+                    <div className="my-skill__block" key={item.id}>
+                      <span>{item.text}</span>
+                      <div className="my-skill__block-progress">
+                        <div className="my-skill__block-progress-percent" style={{ width: `${item.persent}%` }}></div>
+                        <span>{item.persent}%</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </> 
+              :
+              <div className='my-skill-chart'>
+                <div className='my-skill-chart-block'>
+                  <p className='my-skill-chart__title'>Style</p>
+                  <Chart data={skills.filter((item => item.filter === 'style'))} width={ windowWidth < 500 ? 400 : 500 } height={windowWidth < 500 ? 200 : 300}  />
+                </div>
+                <div className='my-skill-chart-block'>
+                  <p className='my-skill-chart__title'>Data base</p>
+                  <Chart data={skills.filter((item => item.filter === 'db'))} width={ windowWidth < 500 ? 400 : 500 } height={windowWidth < 500 ? 200 : 300}  />
+                </div>
+                <div className='my-skill-chart-block'>
+                  <p className='my-skill-chart__title'>Language</p>
+                  <Chart data={skills.filter((item => item.filter === 'language'))} width={ windowWidth < 500 ? 400 : 500 } height={windowWidth < 500 ? 200 : 300}  />
+                </div>
+                <div className='my-skill-chart-block'>
+                  <p className='my-skill-chart__title'>Backend</p>
+                  <Chart data={skills.filter((item => item.filter === 'backend'))} width={ windowWidth < 500 ? 400 : 500 } height={windowWidth < 500 ? 200 : 300}  />
+                </div>
+              </div>
+            }
           </section>
       }
 
