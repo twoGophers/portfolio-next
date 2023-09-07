@@ -4,9 +4,15 @@ import Navigation from '../../components/navigation/Navigation';
 import Image from 'next/image';
 import { Link, animateScroll as scroll } from "react-scroll";
 import LinkItem from 'next/link';
+import { ComparisonSlider } from 'react-comparison-slider';
 import dynamic from 'next/dynamic';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
+//img
 import MyProfile from '../../public/images/about/IMG_1089Bg.png';
+import MyProfile1 from '../../public/images/about/IMG_1089Bg1.png';
+
 const Chart = dynamic(() => import('../../components/chart/Chart'), {
   ssr: false, 
 });
@@ -24,7 +30,9 @@ export default function Main( {skills, projects, testProjects} ) {
 
   const handleShowMenu = (status) => {
     setShowMenu(status);
-  }
+  };
+
+  
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -44,8 +52,21 @@ export default function Main( {skills, projects, testProjects} ) {
     }
   }, []);
 
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Trigger the animation only once
+  });
+
+  const fadeInVariants = {
+    hidden: { opacity: 0, x: -200 },
+    visible: { opacity: 1, x: 0 },
+  };
+
   return (
-    <div>
+    <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
       <Head>
         <title>basic information</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -57,7 +78,9 @@ export default function Main( {skills, projects, testProjects} ) {
           <div className="my-profile">
             <div className="my-profile__content" >
               <div className="my-profile__content-my">
-                <h3>Vladimir</h3>
+
+                <AnimateH3 title="Vladimir" />
+
                 <p className='my-profile__content-my-paragraph'>Age: 30 years old</p>
                 <p style={{ fontSize: `20px` }}>Frontend - developer</p>
               </div>
@@ -73,17 +96,23 @@ export default function Main( {skills, projects, testProjects} ) {
               </div>
             </div>
             <div className="my-profile__my-foto">
-              <Image 
-                src={MyProfile} 
-                />
+            <ComparisonSlider
+              defaultValue={50}
+              itemOne={ <Image src={MyProfile} /> }
+              itemTwo={ <Image src={MyProfile1} /> }
+              aspectRatio={16 / 9}
+              orientation="horizontal"
+            />
             </div>
           </div>
         </section>
       <hr className='hr-text' />
       {
         skills && 
-          <section className='basic' id='section-skill'>
-            <h3>Skills</h3>
+          <section className='basic basic-block' id='section-skill'>
+
+              <AnimateH3 title="Skills" />
+
             {
               !showSkills ?
                 <button className='btn-skill' onClick={() => setShowSkills(true)}>All skills</button>
@@ -93,39 +122,61 @@ export default function Main( {skills, projects, testProjects} ) {
             {
               showSkills ? 
               <>
-                <div className="my-skill">
-                  {skills
-                    .filter(item => item.filter)
-                    .slice()
-                    .sort((a, b) => a.filter.localeCompare(b.filter))
-                    .map( item => (
-                    <div className="my-skill__block" key={item.id}>
-                      <span>{item.text}</span>
-                      <div className="my-skill__block-progress">
-                        <div className="my-skill__block-progress-percent" style={{ width: `${item.persent}%` }}></div>
-                        <span>{item.persent}%</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <motion.div 
+                    className="my-skill"
+                >
+                  <AnimatePresence>
+                    {skills
+                      .filter(item => item.filter)
+                      .slice()
+                      .sort((a, b) => a.filter.localeCompare(b.filter))
+                      .map((item, index) => (
+                        <motion.div 
+                          className="my-skill__block" 
+                          key={item.id}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{
+                            duration: 0.3,
+                            delay: 0.1 * index,
+                          }}
+                        >
+                          <span>{item.text}</span>
+                          <div className="my-skill__block-progress">
+                            <motion.div 
+                              className="my-skill__block-progress-percent" 
+                              initial={{ width: 0 }}
+                              animate={{ width: `${item.persent}%` }}
+                              transition={{
+                                duration: 0.5,
+                                delay: 0.1 * index,
+                              }}
+                              
+                            ></motion.div>
+                            <span>{item.persent}%</span>
+                          </div>
+                        </motion.div>
+                      ))}
+                  </AnimatePresence>
+                </motion.div>
               </> 
               :
               <div className='my-skill-chart'>
                 <div className='my-skill-chart-block'>
                   <p className='my-skill-chart__title'>Style</p>
-                  <Chart data={skills.filter((item => item.filter === 'style'))} width={ windowWidth < 500 ? 400 : 500 } height={windowWidth < 500 ? 200 : 300}  />
+                  <Chart data={skills.filter((item => item.filter === 'style'))} width={ windowWidth < 500 ? 400 : 500 } height={windowWidth < 500 ? 200 : 250}  />
                 </div>
                 <div className='my-skill-chart-block'>
                   <p className='my-skill-chart__title'>Data base</p>
-                  <Chart data={skills.filter((item => item.filter === 'db'))} width={ windowWidth < 500 ? 400 : 500 } height={windowWidth < 500 ? 200 : 300}  />
+                  <Chart data={skills.filter((item => item.filter === 'db'))} width={ windowWidth < 500 ? 400 : 500 } height={windowWidth < 500 ? 200 : 250}  />
                 </div>
                 <div className='my-skill-chart-block'>
                   <p className='my-skill-chart__title'>Language</p>
-                  <Chart data={skills.filter((item => item.filter === 'language'))} width={ windowWidth < 500 ? 400 : 500 } height={windowWidth < 500 ? 200 : 300}  />
+                  <Chart data={skills.filter((item => item.filter === 'language'))} width={ windowWidth < 500 ? 400 : 500 } height={windowWidth < 500 ? 200 : 250}  />
                 </div>
                 <div className='my-skill-chart-block'>
                   <p className='my-skill-chart__title'>Backend</p>
-                  <Chart data={skills.filter((item => item.filter === 'backend'))} width={ windowWidth < 500 ? 400 : 500 } height={windowWidth < 500 ? 200 : 300}  />
+                  <Chart data={skills.filter((item => item.filter === 'backend'))} width={ windowWidth < 500 ? 400 : 500 } height={windowWidth < 500 ? 200 : 250}  />
                 </div>
               </div>
             }
@@ -135,8 +186,10 @@ export default function Main( {skills, projects, testProjects} ) {
       <hr className='hr-text' />
       {
         projects &&
-          <section className='basic' id='section-profile'>
-            <h3>Projects</h3>
+          <section className='basic basic-block' id='section-profile'>
+            
+            <AnimateH3 title="Projects" />
+
             <div className="my-projects">
                 { projects.map( item => (
                   <div className='my-projectts__item'  
@@ -161,8 +214,10 @@ export default function Main( {skills, projects, testProjects} ) {
 
       <hr className='hr-text' />
         { testProjects &&
-          <section className='basic' id='section-profile'>
-            <h3>Test projects</h3>
+          <section className='basic basic-block' id='section-profile'>
+
+            <AnimateH3 title="Test projects" />
+
             <div className="my-projects">
                 { testProjects.map( item => (
                   <div className='my-projectts__item'  
@@ -185,8 +240,35 @@ export default function Main( {skills, projects, testProjects} ) {
           </section>
         }
 
-    </div>
+    </motion.div>
   )
+
+
+  
+  function AnimateH3({ title }) {
+    const [ref, inView] = useInView({
+      triggerOnce: true, // Trigger the animation only once
+    });
+
+    const fadeInVariants = {
+      hidden: { opacity: 0, x: -200 },
+      visible: { opacity: 1, x: 0 },
+    };
+
+    return (
+      <motion.h3
+        ref={ref}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={fadeInVariants}
+        transition={{
+          duration: 0.5,
+        }}
+      >
+        {title}
+      </motion.h3>
+    );
+  }
 }
 
 

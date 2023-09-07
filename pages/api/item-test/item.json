@@ -50,13 +50,6 @@
             "images" : "NuxtIdaProject.png"
         },
         {
-            "id" : 7,
-            "name" : "Formik",
-            "link" : "https://twogophers.github.io/react-form-formik/",
-            "technologies" : "React, Formik",
-            "images" : "JsForrmik.png"
-        },
-        {
             "id" : 8,
             "name" : "Food",
             "link" : "https://twogophers.github.io/food/",

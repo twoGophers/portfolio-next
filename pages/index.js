@@ -99,7 +99,7 @@ export default function App({skills, projects}) {
                 <SlideBlock 
                   titleOne={'Information'}
                   titleTwo={'about me'}
-                  contentOne={'I love Design, Technology,'}
+                  contentOne={'I like Design, Technology,'}
                   contentTwo={'and Story.'}
                   activePortfolio={false}
                   activeImages={true}
