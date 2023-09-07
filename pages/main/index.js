@@ -220,21 +220,7 @@ export default function Main( {skills, projects, testProjects} ) {
 
             <div className="my-projects">
                 { testProjects.map( item => (
-                  <div className='my-projectts__item'  
-                    key={item.id}
-                    >
-                      <LinkItem href={item.link}>
-                        <a>
-                        <Image 
-                          src={'/images/projectItem/'+ item.images}
-                          layout="responsive"
-                          width={100}
-                          height={70}
-                          alt={item.name}
-                        />
-                        </a>
-                      </LinkItem>
-                  </div>
+                  <AnimateItem item={item} key={item.id} />
                 ))}
             </div>
           </section>
@@ -267,6 +253,44 @@ export default function Main( {skills, projects, testProjects} ) {
       >
         {title}
       </motion.h3>
+    );
+  }
+
+
+  function AnimateItem({ item }) {
+    const [ref, inView] = useInView({
+      triggerOnce: true, // Trigger the animation only once
+    });
+
+    const fadeInVariants = {
+      hidden: { opacity: 0, y: 0 },
+      visible: { opacity: 1, y: 0 },
+    };
+
+    return (
+      <motion.div 
+        className='my-projectts__item'  
+        key={item.id}
+        ref={ref}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={fadeInVariants}
+        transition={{
+          duration: 0.5,
+        }}
+        >
+          <LinkItem href={item.link}>
+            <a>
+            <Image 
+              src={'/images/projectItem/'+ item.images}
+              layout="responsive"
+              width={100}
+              height={70}
+              alt={item.name}
+            />
+            </a>
+          </LinkItem>
+      </motion.div>
     );
   }
 }
