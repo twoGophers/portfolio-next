@@ -8,6 +8,7 @@ import { ComparisonSlider } from 'react-comparison-slider';
 import dynamic from 'next/dynamic';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Spline from '@splinetool/react-spline';
 
 //img
 import MyProfile from '../../public/images/about/IMG_1089Bg.png';
@@ -19,10 +20,6 @@ const Chart = dynamic(() => import('../../components/chart/Chart'), {
 
 export default function Main( {skills, projects, testProjects} ) {
 
-  const scrollToTop = () => {
-    scroll.scrollToTop();
-  };
-
   const [ projectHover, setPrrojectHover] = useState(true);
   const [ showMenu, setShowMenu] = useState(false);
   const [ showSkills, setShowSkills ] = useState(false);
@@ -32,9 +29,10 @@ export default function Main( {skills, projects, testProjects} ) {
     setShowMenu(status);
   };
 
-  
-
   useEffect(() => {
+
+    window.scrollTo(0, 0);
+
     if (typeof window !== 'undefined') {
       setWindowWidth(window.innerWidth);
 
@@ -52,14 +50,6 @@ export default function Main( {skills, projects, testProjects} ) {
     }
   }, []);
 
-  const [ref, inView] = useInView({
-    triggerOnce: true, // Trigger the animation only once
-  });
-
-  const fadeInVariants = {
-    hidden: { opacity: 0, x: -200 },
-    visible: { opacity: 1, x: 0 },
-  };
 
   return (
     <motion.div
@@ -71,6 +61,12 @@ export default function Main( {skills, projects, testProjects} ) {
         <title>basic information</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+
+      <div className='spline'>
+        <Spline
+        scene="https://prod.spline.design/FsVGbl6sHG5beRWp/scene.splinecode" />
+      </div>
+
       <header style={{ position: 'fixed', background: '#181818'}}>
         <Navigation />
       </header>
@@ -191,22 +187,8 @@ export default function Main( {skills, projects, testProjects} ) {
             <AnimateH3 title="Projects" />
 
             <div className="my-projects">
-                { projects.map( item => (
-                  <div className='my-projectts__item'  
-                    key={item.id}
-                    >
-                      <LinkItem href={`/project/${item.id}`}>
-                        <a>
-                        <Image 
-                          src={'/images/project/'+ item.imgBg}
-                          layout="responsive"
-                          width={100}
-                          height={70}
-                          alt={item.name}
-                        />
-                        </a>
-                      </LinkItem>
-                  </div>
+                { projects.map( (item, index )=> (
+                  <AnimateItem item={item} key={item.id} index={index} />
                 ))}
             </div>
           </section>
@@ -219,22 +201,8 @@ export default function Main( {skills, projects, testProjects} ) {
             <AnimateH3 title="Test projects" />
 
             <div className="my-projects">
-                { testProjects.map( item => (
-                  <div className='my-projectts__item'  
-                    key={item.id}
-                    >
-                      <LinkItem href={item.link}>
-                        <a>
-                        <Image 
-                          src={'/images/projectItem/'+ item.images}
-                          layout="responsive"
-                          width={100}
-                          height={70}
-                          alt={item.name}
-                        />
-                        </a>
-                      </LinkItem>
-                  </div>
+                { testProjects.map( (item, index )=> (
+                  <AnimateItemTest item={item} key={item.id} index={index} />
                 ))}
             </div>
           </section>
@@ -267,6 +235,82 @@ export default function Main( {skills, projects, testProjects} ) {
       >
         {title}
       </motion.h3>
+    );
+  }
+
+
+  function AnimateItem({ item, index }) {
+    const [ref, inView] = useInView({
+      triggerOnce: true, // Trigger the animation only once
+    });
+
+    const fadeInVariants = {
+      hidden: { opacity: 0, y: 50 },
+      visible: { opacity: 1, y: 0 },
+    };
+
+    return (
+      <motion.div className='my-projectts__item'  
+        key={item.id}
+        ref={ref}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={fadeInVariants}
+        transition={{
+          duration: 0.5,
+          delay: 0.1 * index,
+        }}
+        >
+          <LinkItem href={`/project/${item.id}`}>
+            <a>
+            <Image 
+              src={'/images/project/'+ item.imgBg}
+              layout="responsive"
+              width={100}
+              height={70}
+              alt={item.name}
+            />
+            </a>
+          </LinkItem>
+      </motion.div>
+    );
+  }
+
+  function AnimateItemTest({ item, index }) {
+    const [ref, inView] = useInView({
+      triggerOnce: true, // Trigger the animation only once
+    });
+
+    const fadeInVariants = {
+      hidden: { opacity: 0, y: 50 },
+      visible: { opacity: 1, y: 0 },
+    };
+
+    return (
+      <motion.div 
+        className='my-projectts__item'  
+        key={item.id}
+        ref={ref}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={fadeInVariants}
+        transition={{
+          duration: 0.5,
+          delay: 0.1 * index,
+        }}
+        >
+          <LinkItem href={item.link}>
+            <a>
+            <Image 
+              src={'/images/projectItem/'+ item.images}
+              layout="responsive"
+              width={100}
+              height={70}
+              alt={item.name}
+            />
+            </a>
+          </LinkItem>
+      </motion.div>
     );
   }
 }
