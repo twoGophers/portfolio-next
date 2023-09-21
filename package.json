@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^0.9.455",
     "autoprefixer": "^9.8.8",
     "d3": "^7.8.5",
     "dotenv": "^16.0.3",

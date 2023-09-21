@@ -120,7 +120,12 @@
             border-radius: 10px;
             overflow: hidden;
             position: relative;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);        
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
+            transition: 0.3s ease-in-out;
+            
+            &:hover {
+                box-shadow: 0px 0px 10px 8px rgba(70, 184, 184, 0.7);
+            }
             .my-projectts__item-hover {
                 width: 100%;
                 height: 100%;
