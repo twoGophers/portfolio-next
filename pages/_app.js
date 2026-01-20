@@ -3,7 +3,6 @@ import '../styles/global/Imports.scss';
 import Head from 'next/head';
 import Router from 'next/router';
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 import Loader from '../components/Loading/Spinner';
 import NProgress from 'nprogress';
 NProgress.configure({ showSpinner: false });
@@ -13,22 +12,28 @@ let wndowInnerWidth = 0;
 function MyApp({ Component, pageProps }) {
 
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
-    useEffect(() => {
-    if (router.pathname === '/') {
-      router.replace('/main');
-    }
-  }, []);
-
-  Router.events.on('routeChangeStart', (url) => {
+useEffect(() => {
+  const start = () => {
     setLoading(true);
     NProgress.start();
-  })
-  Router.events.on('routeChangeComplete', (url) => {
-    NProgress.done();
+  };
+
+  const done = () => {
     setLoading(false);
-  })
+    NProgress.done();
+  };
+
+  Router.events.on('routeChangeStart', start);
+  Router.events.on('routeChangeComplete', done);
+  Router.events.on('routeChangeError', done);
+
+  return () => {
+    Router.events.off('routeChangeStart', start);
+    Router.events.off('routeChangeComplete', done);
+    Router.events.off('routeChangeError', done);
+  };
+}, []);
 
   //Вправки для мобильного устройства
   const handleResize = () => {

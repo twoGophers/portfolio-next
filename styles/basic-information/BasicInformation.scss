@@ -1,24 +1,27 @@
-
 .basic {
     width: 100%;
     padding: 2% 0%;
     margin-top: 8%;
 
     animation: 0.5s basic-animated ease-in-out;
+
     h3 {
         font-size: 3rem;
         color: #181818;
     }
+
     span {
         font-size: 1.2rem;
         color: #181818;
     }
+
     .my-profile {
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         &__content {
             width: 50%;
             height: 100%;
@@ -26,9 +29,12 @@
             flex-direction: column;
             align-content: space-between;
             line-height: 2rem;
-            .my-profile__content-my, .my-profile__content-about {
+
+            .my-profile__content-my,
+            .my-profile__content-about {
                 display: flex;
                 flex-direction: column;
+
                 .my-profile__content-my-paragraph {
                     margin-top: 40px;
                     margin-bottom: 5px;
@@ -37,28 +43,36 @@
 
             }
         }
+
         &__my-foto {
             width: 40%;
+
             .c-dyuglr {
                 padding-bottom: 100% !important;
             }
+
             .c-cwwhPj {
                 width: 2px;
                 background: #fff;
+
                 &:nth-child(1) {
-                    bottom: 50%; /* Adjust this value to control the height of the transparent top portion */
+                    bottom: 50%;
+                    /* Adjust this value to control the height of the transparent top portion */
                     background: linear-gradient(to bottom, rgba(255, 0, 0, 0) 0%, #fff 100%);
                     pointer-events: none;
                 }
             }
+
             .c-fHmRMN {
                 position: absolute;
                 bottom: 0px;
                 left: 1px;
+
                 ::before {
                     content: "";
                     background-image: url('../../public/images/icons/free-icon-switch-arrows-9267094.png');
-                    background-size: 30px auto; /* Adjust the width to your desired size */
+                    background-size: 30px auto;
+                    /* Adjust the width to your desired size */
                     background-repeat: no-repeat;
                     width: 30px;
                     height: 40px;
@@ -69,11 +83,13 @@
                     animation: show-line-foto 2s linear infinite;
                 }
             }
+
             .c-harWIp {
                 outline: 1px solid #818078;
             }
         }
     }
+
     .my-skill {
         display: flex;
         width: 100%;
@@ -93,18 +109,21 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+
                 .my-skill__block-progress-percent {
-                    background: linear-gradient(75deg, rgba(210,210,210,1) 0%, rgba(88,88,88,1) 100%);
+                    background: linear-gradient(75deg, rgba(210, 210, 210, 1) 0%, rgba(88, 88, 88, 1) 100%);
                     height: 8px;
                     border-radius: 10px;
                     margin-right: 10px;
                 }
+
                 .my-skill__block-progress-percent-active {
                     transition: width 1s ease;
                 }
             }
         }
     }
+
     .my-projects {
         width: 100%;
         display: flex;
@@ -114,28 +133,32 @@
         align-content: space-between;
         margin-top: 40px;
         gap: 2rem;
-        position: relative;  
+        position: relative;
+
         .my-projectts__item {
             flex: 1 1 calc((100% / 3) - 2rem);
+            aspect-ratio: 16 / 9;
             border-radius: 10px;
             overflow: hidden;
             position: relative;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
-            transition: 0.3s ease-in-out ;
-            
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.7);
+            transition: 0.3s ease-in-out;
+
             &:hover {
                 box-shadow: 0px 0px 10px 8px rgba(70, 184, 184, 0.7);
             }
+
             .my-projectts__item-hover {
                 width: 100%;
                 height: 100%;
                 position: absolute;
                 top: 0;
                 left: 0;
-                background-color:rgba(0, 0, 0, .4);
+                background-color: rgba(0, 0, 0, .4);
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
                 .my-projectts__item-hover-link {
                     background: #fff;
                     padding: 5px 10px;
@@ -146,12 +169,14 @@
         }
 
     }
+
     .my-skill-chart {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
         margin-top: 30px;
+
         .my-skill-chart-block {
             display: flex;
             flex-direction: column;
@@ -162,18 +187,22 @@
             transition: opacity 0.3s ease-in-out;
 
             &:nth-child(1) {
-                animation-delay: 0.6s; 
+                animation-delay: 0.6s;
             }
+
             &:nth-child(2) {
-                animation-delay: 0.8s; 
+                animation-delay: 0.8s;
             }
+
             &:nth-child(3) {
-                animation-delay: 1s; 
+                animation-delay: 1s;
             }
+
             &:nth-child(4) {
-                animation-delay: 1.2s; 
+                animation-delay: 1.2s;
             }
         }
+
         .my-skill-chart__title {
             width: fit-content;
             font-size: 24px;
@@ -187,6 +216,7 @@
         padding: 6px 20px;
         border-radius: 3px;
         transition: 0.3s all;
+
         &:hover {
             background: #181818;
             color: #fff;
@@ -208,78 +238,108 @@
     height: 1.5em;
     opacity: .5;
     margin-top: 30px;
+
     &:before {
-      content: '';
-      background: linear-gradient(to right, transparent, #818078, transparent);
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 100%;
-      height: 1px;
+        content: '';
+        background: linear-gradient(to right, transparent, #818078, transparent);
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 1px;
     }
+
     &:after {
-      content: '';
-      position: relative;
-      display: inline-block;
-      color: black;
-      padding: 0 .5em;
-      line-height: 1.5em;
-      color: #818078;
-      background-color: #fcfcfa;
+        content: '';
+        position: relative;
+        display: inline-block;
+        color: black;
+        padding: 0 .5em;
+        line-height: 1.5em;
+        color: #818078;
+        background-color: #fcfcfa;
     }
-  }
+}
 
 
 @keyframes basic-animated {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes show-line-foto {
-    0% { transform: translateX(0px);}
-    25% { transform: translateX(3px);}
-    50% { transform: translateX(0px);}
-    75% { transform: translateX(-3px);}
-    100% { transform: translateX(0px)}
+    0% {
+        transform: translateX(0px);
+    }
+
+    25% {
+        transform: translateX(3px);
+    }
+
+    50% {
+        transform: translateX(0px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        transform: translateX(0px)
+    }
 }
 
 @media screen and (max-width: 992px) {
     .basic {
         margin-top: 10%;
+
         .my-projects {
             .my-projectts__item {
                 flex: 1 1 calc((100% / 2) - 2rem);
+                aspect-ratio: 4 / 3;
             }
         }
-    } 
+    }
 }
 
 @media screen and (max-width: 576px) {
     .basic {
         margin-top: 0%;
+
         h3 {
             margin-top: 30px;
             font-size: 2.5rem;
         }
+
         .my-profile {
             flex-direction: column-reverse;
+
             &__content {
                 width: 100%;
             }
+
             &__my-foto {
                 width: 100%;
                 margin-top: 15%;
             }
         }
+
         .my-skill {
             &__block {
                 width: 100%;
             }
         }
+
         .my-projects {
             .my-projectts__item {
                 flex: 1 1 calc((100% / 1) - 2rem);
+                aspect-ratio: 3 / 2;
             }
         }
-    } 
+    }
 }

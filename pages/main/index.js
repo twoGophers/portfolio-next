@@ -15,14 +15,14 @@ import MyProfile from '../../public/images/about/IMG_1089Bg.png';
 import MyProfile1 from '../../public/images/about/IMG_1089Bg1.png';
 
 const Chart = dynamic(() => import('../../components/chart/Chart'), {
-  ssr: false, 
+  ssr: false,
 });
 
-export default function Main( {skills, projects, testProjects} ) {
+export default function Main({ skills, projects, testProjects }) {
 
-  const [ projectHover, setPrrojectHover] = useState(true);
-  const [ showMenu, setShowMenu] = useState(false);
-  const [ showSkills, setShowSkills ] = useState(false);
+  const [projectHover, setPrrojectHover] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
+  const [showSkills, setShowSkills] = useState(false);
   const [windowWidth, setWindowWidth] = useState(null);
 
   const handleShowMenu = (status) => {
@@ -53,10 +53,10 @@ export default function Main( {skills, projects, testProjects} ) {
 
   return (
     <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-      >
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Head>
         <title>basic information</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -64,62 +64,62 @@ export default function Main( {skills, projects, testProjects} ) {
 
       <div className='spline'>
         <Spline
-        scene="https://prod.spline.design/FsVGbl6sHG5beRWp/scene.splinecode" />
+          scene="https://prod.spline.design/FsVGbl6sHG5beRWp/scene.splinecode" />
       </div>
 
-      <header style={{ position: 'fixed', background: '#181818'}}>
+      <header style={{ position: 'fixed', background: '#181818' }}>
         <Navigation />
       </header>
-        <section className='basic container'>
-          <div className="my-profile">
-            <div className="my-profile__content" >
-              <div className="my-profile__content-my">
+      <section className='basic container'>
+        <div className="my-profile">
+          <div className="my-profile__content" >
+            <div className="my-profile__content-my">
 
-                <AnimateH3 title="Vladimir" />
+              <AnimateH3 title="Vladimir" />
 
-                <p className='my-profile__content-my-paragraph'>Age: 30 years old</p>
-                <p style={{ fontSize: `20px` }}>Frontend - developer</p>
-              </div>
-              <div className="my-profile__content-about">
-                <span className='my-profile__content-my-paragraph'>About me:</span>
-                <span>
-                  I am engaged in the development of single-page turnkey websites. Whenever possible, I study English and a new introduction to web development, practicing the acquired knowledge. I make a rubber, adaptive Flex layout for mobile devices and tablets.
-                </span>
-                <span className='my-profile__content-my-paragraph'>Hobby: </span>
-                <span>
-                  In my free time I play guitar, play online games, walk with cats, watch movies (fantasy, horror, historical and mystical films).
-                </span>
-              </div>
+              <p className='my-profile__content-my-paragraph'>Age: 32 years old</p>
+              <p style={{ fontSize: `20px` }}>Frontend - developer</p>
             </div>
-            <div className="my-profile__my-foto">
+            <div className="my-profile__content-about">
+              <span className='my-profile__content-my-paragraph'>About me:</span>
+              <span>
+                I am engaged in the development of single-page turnkey websites. Whenever possible, I study English and a new introduction to web development, practicing the acquired knowledge. I make a rubber, adaptive Flex layout for mobile devices and tablets.
+              </span>
+              <span className='my-profile__content-my-paragraph'>Hobby: </span>
+              <span>
+                In my free time I play guitar, play online games, walk with cats, watch movies (fantasy, horror, historical and mystical films).
+              </span>
+            </div>
+          </div>
+          <div className="my-profile__my-foto">
             <ComparisonSlider
               defaultValue={50}
-              itemOne={ <Image src={MyProfile} /> }
-              itemTwo={ <Image src={MyProfile1} /> }
+              itemOne={<Image src={MyProfile} />}
+              itemTwo={<Image src={MyProfile1} />}
               aspectRatio={16 / 9}
               orientation="horizontal"
             />
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
       <hr className='hr-text' />
       {
-        skills && 
-          <section className='basic basic-block container' id='section-skill'>
+        skills &&
+        <section className='basic basic-block container' id='section-skill'>
 
-              <AnimateH3 title="Skills" />
+          <AnimateH3 title="Skills" />
 
-            {
-              !showSkills ?
-                <button className='btn-skill' onClick={() => setShowSkills(true)}>All skills</button>
+          {
+            !showSkills ?
+              <button className='btn-skill' onClick={() => setShowSkills(true)}>All skills</button>
               :
-                <button className='btn-skill' onClick={() => setShowSkills(false)}>Chart</button>
-            }
-            {
-              showSkills ? 
+              <button className='btn-skill' onClick={() => setShowSkills(false)}>Chart</button>
+          }
+          {
+            showSkills ?
               <>
-                <motion.div 
-                    className="my-skill"
+                <motion.div
+                  className="my-skill"
                 >
                   <AnimatePresence>
                     {skills
@@ -127,8 +127,8 @@ export default function Main( {skills, projects, testProjects} ) {
                       .slice()
                       .sort((a, b) => a.filter.localeCompare(b.filter))
                       .map((item, index) => (
-                        <motion.div 
-                          className="my-skill__block" 
+                        <motion.div
+                          className="my-skill__block"
                           key={item.id}
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
@@ -139,15 +139,15 @@ export default function Main( {skills, projects, testProjects} ) {
                         >
                           <span>{item.text}</span>
                           <div className="my-skill__block-progress">
-                            <motion.div 
-                              className="my-skill__block-progress-percent" 
+                            <motion.div
+                              className="my-skill__block-progress-percent"
                               initial={{ width: 0 }}
                               animate={{ width: `${item.persent}%` }}
                               transition={{
                                 duration: 0.5,
                                 delay: 0.1 * index,
                               }}
-                              
+
                             ></motion.div>
                             <span>{item.persent}%</span>
                           </div>
@@ -155,64 +155,64 @@ export default function Main( {skills, projects, testProjects} ) {
                       ))}
                   </AnimatePresence>
                 </motion.div>
-              </> 
+              </>
               :
               <div className='my-skill-chart'>
                 <div className='my-skill-chart-block'>
                   <p className='my-skill-chart__title'>Style</p>
-                  <Chart data={skills.filter((item => item.filter === 'style'))} width={ windowWidth < 500 ? 350 : 500 } height={windowWidth < 500 ? 200 : 250}  />
+                  <Chart data={skills.filter((item => item.filter === 'style'))} width={windowWidth < 500 ? 350 : 500} height={windowWidth < 500 ? 200 : 250} />
                 </div>
                 <div className='my-skill-chart-block'>
                   <p className='my-skill-chart__title'>Data base</p>
-                  <Chart data={skills.filter((item => item.filter === 'db'))} width={ windowWidth < 500 ? 350 : 500 } height={windowWidth < 500 ? 200 : 250}  />
+                  <Chart data={skills.filter((item => item.filter === 'db'))} width={windowWidth < 500 ? 350 : 500} height={windowWidth < 500 ? 200 : 250} />
                 </div>
                 <div className='my-skill-chart-block'>
                   <p className='my-skill-chart__title'>Language</p>
-                  <Chart data={skills.filter((item => item.filter === 'language'))} width={ windowWidth < 500 ? 350 : 500 } height={windowWidth < 500 ? 200 : 250}  />
+                  <Chart data={skills.filter((item => item.filter === 'language'))} width={windowWidth < 500 ? 350 : 500} height={windowWidth < 500 ? 200 : 250} />
                 </div>
                 <div className='my-skill-chart-block'>
                   <p className='my-skill-chart__title'>Backend</p>
-                  <Chart data={skills.filter((item => item.filter === 'backend'))} width={ windowWidth < 500 ? 350 : 500 } height={windowWidth < 500 ? 200 : 250}  />
+                  <Chart data={skills.filter((item => item.filter === 'backend'))} width={windowWidth < 500 ? 350 : 500} height={windowWidth < 500 ? 200 : 250} />
                 </div>
               </div>
-            }
-          </section>
+          }
+        </section>
       }
 
       <hr className='hr-text' />
       {
         projects &&
-          <section className='basic basic-block container' id='section-profile'>
-            
-            <AnimateH3 title="Projects" />
+        <section className='basic basic-block container' id='section-profile'>
 
-            <div className="my-projects">
-                { projects.map( (item, index )=> (
-                  <AnimateItem item={item} key={item.id} index={index} />
-                ))}
-            </div>
-          </section>
+          <AnimateH3 title="Projects" />
+
+          <div className="my-projects">
+            {projects.map((item, index) => (
+              <AnimateItem item={item} key={item.id} index={index} />
+            ))}
+          </div>
+        </section>
       }
 
       <hr className='hr-text' />
-        { testProjects &&
-          <section className='basic basic-block container' id='section-profile'>
+      {testProjects &&
+        <section className='basic basic-block container' id='section-profile'>
 
-            <AnimateH3 title="Test projects" />
+          <AnimateH3 title="Test projects" />
 
-            <div className="my-projects">
-                { testProjects.map( (item, index )=> (
-                  <AnimateItemTest item={item} key={item.id} index={index} />
-                ))}
-            </div>
-          </section>
-        }
+          <div className="my-projects">
+            {testProjects.map((item, index) => (
+              <AnimateItemTest item={item} key={item.id} index={index} />
+            ))}
+          </div>
+        </section>
+      }
 
     </motion.div>
   )
 
 
-  
+
   function AnimateH3({ title }) {
     const [ref, inView] = useInView({
       triggerOnce: true, // Trigger the animation only once
@@ -250,7 +250,7 @@ export default function Main( {skills, projects, testProjects} ) {
     };
 
     return (
-      <motion.div className='my-projectts__item'  
+      <motion.div className='my-projectts__item'
         key={item.id}
         ref={ref}
         initial="hidden"
@@ -260,18 +260,17 @@ export default function Main( {skills, projects, testProjects} ) {
           duration: 0.5,
           delay: 0.1 * index,
         }}
-        >
-          <LinkItem href={`/project/${item.id}`}>
-            <a>
-            <Image 
-              src={'/images/project/'+ item.imgBg}
-              layout="responsive"
-              width={100}
-              height={70}
+      >
+        <LinkItem href={`/project/${item.id}`}>
+          <a>
+            <Image
+              src={'/images/project/' + item.imgBg}
+              layout="fill"
+              objectFit="cover"
               alt={item.name}
             />
-            </a>
-          </LinkItem>
+          </a>
+        </LinkItem>
       </motion.div>
     );
   }
@@ -287,8 +286,8 @@ export default function Main( {skills, projects, testProjects} ) {
     };
 
     return (
-      <motion.div 
-        className='my-projectts__item'  
+      <motion.div
+        className='my-projectts__item'
         key={item.id}
         ref={ref}
         initial="hidden"
@@ -298,18 +297,17 @@ export default function Main( {skills, projects, testProjects} ) {
           duration: 0.5,
           delay: 0.1 * index,
         }}
-        >
-          <LinkItem href={item.link}>
-            <a>
-            <Image 
-              src={'/images/projectItem/'+ item.images}
-              layout="responsive"
-              width={100}
-              height={70}
+      >
+        <LinkItem href={item.link}>
+          <a>
+            <Image
+              src={'/images/projectItem/' + item.images}
+              layout="fill"
+              objectFit="cover"
               alt={item.name}
             />
-            </a>
-          </LinkItem>
+          </a>
+        </LinkItem>
       </motion.div>
     );
   }
@@ -332,7 +330,7 @@ export async function getStaticProps() {
     const testProjects = await testProject.json()
 
     //Если нет ответа, вернет 404
-    if(!skills || !projects || !testProjects) {
+    if (!skills || !projects || !testProjects) {
       return {
         notFound: true,
       }

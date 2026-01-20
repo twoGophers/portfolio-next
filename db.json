@@ -122,7 +122,7 @@
         {
             "id": 11,
             "name": "forge",
-            "imgBg": "forge.png",
+            "imgBg": "forgeBg.png",
             "imgPlan": "forgePlan.png",
             "imgMob": "forgeMob.png",
             "proectInstrumen": "HTML, SCSS, TailwindCss, Java Script, RestAPI, Next.js, Redux, Nest.js, MongoDB, Vercel",
@@ -131,16 +131,6 @@
         },
         {
             "id": 10,
-            "name": "rangeweb",
-            "imgBg": "rangewebBg.png",
-            "imgPlan": "rangewebPlan.png",
-            "imgMob": "rangewebMob.png",
-            "proectInstrumen": "HTML, SCSS, Bootstrap, Java Script, API, Next.js",
-            "proectAddress": "https://dev.rangeweb.ru/",
-            "project": "rangeweb"
-        },
-        {
-            "id": 9,
             "name": "rangeweb",
             "imgBg": "rangewebBg.png",
             "imgPlan": "rangewebPlan.png",

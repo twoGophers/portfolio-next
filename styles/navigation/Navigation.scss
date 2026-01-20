@@ -10,10 +10,22 @@
         color: white;
         font-size: 26px;
         font-weight: 500;
+        color: #333333; // мягкий тёмный цвет
+        transition: color 0.3s ease;
+
+        border: 1px solid #9b9b9b;
+        border-radius: 20px;
+        padding: 5px 10px;
+
+        box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+        background: rgb(255, 217, 0);
 
         &:hover {
             transition: 0.3s;
             color: rgb(131, 131, 131);
+            background: rgb(253, 227, 78);
+            box-shadow: 0px 4px 8px 0px rgba(101, 178, 236, 0.2);
         }
     }
 
@@ -45,8 +57,8 @@
         .panel__icon::before {
             content: '';
             position: absolute;
-            width: 120%;
-            height: 120%;
+            width: 110%;
+            height: 110%;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             transform: scale(0);
@@ -60,7 +72,7 @@
         .icon-glow::after {
             content: '';
             position: absolute;
-            inset: -6px;
+            inset: -2px;
             border-radius: 50%;
             background: radial-gradient(circle,
                     rgba(0, 136, 204, 0.35),
@@ -190,7 +202,7 @@
     }
 
     50% {
-        transform: translateY(-6px);
+        transform: translateY(-3px);
     }
 
     100% {
@@ -221,5 +233,9 @@
         .burger {
             margin-left: 0px;
         }
+    }
+
+    .panel__icon svg path{
+        fill: #fff;
     }
 }
