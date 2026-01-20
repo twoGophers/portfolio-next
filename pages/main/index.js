@@ -267,7 +267,7 @@ export default function Main({ skills, projects, testProjects }) {
               src={'/images/project/' + item.imgBg}
               layout="fill"
               objectFit="cover"
-              alt={item.name}
+              alt={item.imgBg}
             />
           </a>
         </LinkItem>
@@ -304,7 +304,7 @@ export default function Main({ skills, projects, testProjects }) {
               src={'/images/projectItem/' + item.images}
               layout="fill"
               objectFit="cover"
-              alt={item.name}
+              alt={item.imgBg}
             />
           </a>
         </LinkItem>
