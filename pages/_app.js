@@ -3,6 +3,7 @@ import '../styles/global/Imports.scss';
 import Head from 'next/head';
 import Router from 'next/router';
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import Loader from '../components/Loading/Spinner';
 import NProgress from 'nprogress';
 NProgress.configure({ showSpinner: false });
@@ -12,6 +13,13 @@ let wndowInnerWidth = 0;
 function MyApp({ Component, pageProps }) {
 
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
+    useEffect(() => {
+    if (router.pathname === '/') {
+      router.replace('/main');
+    }
+  }, []);
 
   Router.events.on('routeChangeStart', (url) => {
     setLoading(true);
@@ -25,10 +33,10 @@ function MyApp({ Component, pageProps }) {
   //Вправки для мобильного устройства
   const handleResize = () => {
     const currentWindowInnerWidth = window.innerHeight;
-    if(currentWindowInnerWidth !== wndowInnerWidth) {
-        wndowInnerWidth = currentWindowInnerWidth;
-        const windowInnerHeight = window.innerHeight;
-        document.documentElement.style.setProperty('--windowInnerHeight', `${windowInnerHeight}px`);
+    if (currentWindowInnerWidth !== wndowInnerWidth) {
+      wndowInnerWidth = currentWindowInnerWidth;
+      const windowInnerHeight = window.innerHeight;
+      document.documentElement.style.setProperty('--windowInnerHeight', `${windowInnerHeight}px`);
     }
   };
 
@@ -37,12 +45,12 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     const isMobile = navigator.userAgent.toLowerCase().match(/mobile/i);
 
-    if(isMobile) {
+    if (isMobile) {
       window.addEventListener("resize", handleResize);
     }
 
     return () => {
-      if(isMobile) {
+      if (isMobile) {
         window.removeEventListener("resize", handleResize);
       }
     };
@@ -58,7 +66,7 @@ function MyApp({ Component, pageProps }) {
       {loading && <Loader />}
       <Component {...pageProps} />
     </>
-    )
+  )
 }
 
 export default MyApp

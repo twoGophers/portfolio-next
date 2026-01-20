@@ -13,13 +13,14 @@
         height: 100%;
         margin: 0 auto;
         margin-bottom: 100px;
-        padding: 30px;
+        // padding: 30px;
         display: flex;
         flex-wrap: wrap;
         position: relative;
         justify-content: space-between;
         align-content: space-between;
         border-radius: 5px;
+        
         .id-project__item-block-one, .id-project__item-block-two, .id-project__item-block-three {
             width: 33%;
             display: flex;
@@ -43,7 +44,7 @@
             }
         }
         .id-project__item-block-text {
-            width: 30%;
+            width: 33%;
             height: 100%;
             color: #181818;
             font-size: 24px;
@@ -51,6 +52,7 @@
             display: flex;
             flex-direction: column;
             align-content: space-between;
+            padding: 20px;
             button {
                 margin-top: 40px;
             }
@@ -74,8 +76,11 @@
 @media screen and (max-width: 1200px) {
     .project-item {
         .id-project__item {
+            justify-content: start;
             .id-project__item-block-text {
                 width: 50%;
+                padding: 0px;
+                margin-top: 30px;
                 font-size: 22px;
                 line-height: 2rem;
             }

@@ -10,7 +10,7 @@
     z-index: 1;
     animation: opacity 2s linear;
     .context {
-        margin-left: 10%;
+        // margin-left: 10%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -255,7 +255,7 @@
 
   }
 
-  @media screen and (max-width: 460px) {
+  @media screen and (max-width: 996px) {
     .active-slide {
         .context {
             height: 60%;
@@ -297,6 +297,11 @@
                 width: 100%;
             }
         }
+    }   
+  }
+  @media (min-width: 768px) and (max-width: 996px) {
+    .context__title {
+        margin-left: 40px;
     }   
   }
 

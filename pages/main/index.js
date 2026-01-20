@@ -70,7 +70,7 @@ export default function Main( {skills, projects, testProjects} ) {
       <header style={{ position: 'fixed', background: '#181818'}}>
         <Navigation />
       </header>
-        <section className='basic'>
+        <section className='basic container'>
           <div className="my-profile">
             <div className="my-profile__content" >
               <div className="my-profile__content-my">
@@ -105,7 +105,7 @@ export default function Main( {skills, projects, testProjects} ) {
       <hr className='hr-text' />
       {
         skills && 
-          <section className='basic basic-block' id='section-skill'>
+          <section className='basic basic-block container' id='section-skill'>
 
               <AnimateH3 title="Skills" />
 
@@ -160,19 +160,19 @@ export default function Main( {skills, projects, testProjects} ) {
               <div className='my-skill-chart'>
                 <div className='my-skill-chart-block'>
                   <p className='my-skill-chart__title'>Style</p>
-                  <Chart data={skills.filter((item => item.filter === 'style'))} width={ windowWidth < 500 ? 400 : 500 } height={windowWidth < 500 ? 200 : 250}  />
+                  <Chart data={skills.filter((item => item.filter === 'style'))} width={ windowWidth < 500 ? 350 : 500 } height={windowWidth < 500 ? 200 : 250}  />
                 </div>
                 <div className='my-skill-chart-block'>
                   <p className='my-skill-chart__title'>Data base</p>
-                  <Chart data={skills.filter((item => item.filter === 'db'))} width={ windowWidth < 500 ? 400 : 500 } height={windowWidth < 500 ? 200 : 250}  />
+                  <Chart data={skills.filter((item => item.filter === 'db'))} width={ windowWidth < 500 ? 350 : 500 } height={windowWidth < 500 ? 200 : 250}  />
                 </div>
                 <div className='my-skill-chart-block'>
                   <p className='my-skill-chart__title'>Language</p>
-                  <Chart data={skills.filter((item => item.filter === 'language'))} width={ windowWidth < 500 ? 400 : 500 } height={windowWidth < 500 ? 200 : 250}  />
+                  <Chart data={skills.filter((item => item.filter === 'language'))} width={ windowWidth < 500 ? 350 : 500 } height={windowWidth < 500 ? 200 : 250}  />
                 </div>
                 <div className='my-skill-chart-block'>
                   <p className='my-skill-chart__title'>Backend</p>
-                  <Chart data={skills.filter((item => item.filter === 'backend'))} width={ windowWidth < 500 ? 400 : 500 } height={windowWidth < 500 ? 200 : 250}  />
+                  <Chart data={skills.filter((item => item.filter === 'backend'))} width={ windowWidth < 500 ? 350 : 500 } height={windowWidth < 500 ? 200 : 250}  />
                 </div>
               </div>
             }
@@ -182,7 +182,7 @@ export default function Main( {skills, projects, testProjects} ) {
       <hr className='hr-text' />
       {
         projects &&
-          <section className='basic basic-block' id='section-profile'>
+          <section className='basic basic-block container' id='section-profile'>
             
             <AnimateH3 title="Projects" />
 
@@ -196,7 +196,7 @@ export default function Main( {skills, projects, testProjects} ) {
 
       <hr className='hr-text' />
         { testProjects &&
-          <section className='basic basic-block' id='section-profile'>
+          <section className='basic basic-block container' id='section-profile'>
 
             <AnimateH3 title="Test projects" />
 

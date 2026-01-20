@@ -12,6 +12,17 @@ body {
     -webkit-text-size-adjust: none;
 }
 
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
 header {
     width: 100%;
     z-index: 100;

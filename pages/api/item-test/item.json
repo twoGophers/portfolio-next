@@ -1,6 +1,13 @@
 {
     "item" : [
         {
+            "id" : 14,
+            "name" : "ebs-fe-test",
+            "link" : "https://ebs-fe-test-q1oc.vercel.app/",
+            "technologies" : "Scss, React.js, axios, Redux, TailwindCss",
+            "images" : "ebs-fe-testBg.png"
+        },
+        {
             "id" : 13,
             "name" : "Test-alsodev",
             "link" : "https://twogophers.github.io/alsodev-test/",

@@ -1,119 +1,151 @@
 {
-    "skill" : [
-        { 
-            "id" : 1, 
-            "icon" : "bootstrap.svg", 
-            "text" : "bootstrap",
-            "persent" : 50,
+    "skill": [
+        {
+            "id": 1,
+            "icon": "bootstrap.svg",
+            "text": "bootstrap",
+            "persent": 50,
             "filter": "style"
         },
-        { 
-            "id" : 2, 
-            "icon" : "css.svg", 
-            "text" : "css",
-            "persent" : 90,
+        {
+            "id": 2,
+            "icon": "css.svg",
+            "text": "css",
+            "persent": 90,
             "filter": "style"
         },
-        { 
-            "id" : 3, 
-            "icon" : "firebase.svg", 
-            "text" : "firebase",
-            "persent" : 40,
+        {
+            "id": 3,
+            "icon": "firebase.svg",
+            "text": "firebase",
+            "persent": 40,
             "filter": "db"
         },
-        { 
-            "id" : 4, 
-            "icon" : "git.svg", 
-            "text" : "git",
-            "persent" : 80,
+        {
+            "id": 4,
+            "icon": "git.svg",
+            "text": "git",
+            "persent": 80,
             "filter": "controll"
         },
-        { 
-            "id" : 5, 
-            "icon" : "html.svg", 
-            "text" : "html",
-            "persent" : 80,
+        {
+            "id": 5,
+            "icon": "html.svg",
+            "text": "html",
+            "persent": 80,
             "filter": "markup"
         },
-        { 
-            "id" : 6, 
-            "icon" : "js.svg",
-            "text" : "java script",
-            "persent" : 70,
+        {
+            "id": 6,
+            "icon": "js.svg",
+            "text": "java script",
+            "persent": 70,
             "filter": "language"
         },
-        { 
-            "id" : 7, 
-            "icon" : "nextjs.svg", 
-            "text" : "next js",
-            "persent" : 30,
+        {
+            "id": 7,
+            "icon": "nextjs.svg",
+            "text": "next js",
+            "persent": 30,
             "filter": "language"
         },
-        { 
-            "id" : 8, 
-            "icon" : "nuxt.svg", 
-            "text" : "nuxt js",
-            "persent" : 50,
+        {
+            "id": 8,
+            "icon": "nuxt.svg",
+            "text": "nuxt js",
+            "persent": 50,
             "filter": "language"
         },
-        { 
-            "id" : 9, 
-            "icon" : "react.svg", 
-            "text" : "react js",
-            "persent" : 60,
+        {
+            "id": 9,
+            "icon": "react.svg",
+            "text": "react js",
+            "persent": 60,
             "filter": "language"
         },
-        { 
-            "id" : 10, 
-            "icon" : "sass.svg", 
-            "text" : "scss",
-            "persent" : 80,
+        {
+            "id": 10,
+            "icon": "sass.svg",
+            "text": "scss",
+            "persent": 80,
             "filter": "style"
         },
-        { 
-            "id" : 11, 
-            "icon" : "vue.svg", 
-            "text" : "vue js",
-            "persent" : 70,
+        {
+            "id": 11,
+            "icon": "vue.svg",
+            "text": "vue js",
+            "persent": 70,
             "filter": "language"
         },
-        { 
-            "id" : 12, 
-            "icon" : "vuetify.svg", 
-            "text" : "vuetify",
-            "persent" : 30,
+        {
+            "id": 12,
+            "icon": "vuetify.svg",
+            "text": "vuetify",
+            "persent": 30,
             "filter": "style"
         },
-        { 
-            "id" : 13, 
-            "icon" : "node-js.svg", 
-            "text" : "node.js",
-            "persent" : 40,
+        {
+            "id": 13,
+            "icon": "node-js.svg",
+            "text": "node.js",
+            "persent": 40,
             "filter": "backend"
         },
-        { 
-            "id" : 14, 
-            "icon" : "mongodb.svg", 
-            "text" : "mongodb",
-            "persent" : 50,
+        {
+            "id": 14,
+            "icon": "mongodb.svg",
+            "text": "mongodb",
+            "persent": 50,
             "filter": "db"
         },
-        { 
-            "id" : 15, 
-            "icon" : "php-logo.svg", 
-            "text" : "php",
-            "persent" : 20,
+        {
+            "id": 15,
+            "icon": "php-logo.svg",
+            "text": "php",
+            "persent": 20,
             "filter": "backend"
         }
     ],
-    "project" : [
+    "project": [
+        
+
+        {
+            "id": 12,
+            "name": "mailiq",
+            "imgBg": "mailiqBg.png",
+            "imgPlan": "mailiqPlan.png",
+            "imgMob": "mailiqMob.png",
+            "proectInstrumen": "HTML, SCSS, TailwindCss, Java Script, Next.js",
+            "proectAddress": "https://mailiq.vercel.app/",
+            "project": "mailiq"
+        },
+        {
+            "id": 11,
+            "name": "forge",
+            "imgBg": "forge.png",
+            "imgPlan": "forgePlan.png",
+            "imgMob": "forgeMob.png",
+            "proectInstrumen": "HTML, SCSS, TailwindCss, Java Script, RestAPI, Next.js, Redux, Nest.js, MongoDB, Vercel",
+            "proectAddress": "https://anatolii-front.vercel.app/",
+            "project": "forge"
+        },
+        {
+            "id": 10,
+            "name": "rangeweb",
+            "imgBg": "rangewebBg.png",
+            "imgPlan": "rangewebPlan.png",
+            "imgMob": "rangewebMob.png",
+            "proectInstrumen": "HTML, SCSS, Bootstrap, Java Script, API, Next.js",
+            "proectAddress": "https://dev.rangeweb.ru/",
+            "project": "rangeweb"
+        },
         {
             "id": 9,
             "name": "rangeweb",
             "imgBg": "rangewebBg.png",
             "imgPlan": "rangewebPlan.png",
-            "imgMob" : "rangewebMob.png",
-            "proectInstrumen" : "HTML, SCSS, Bootstrap, Java Script, API, Next.js",
+            "imgMob": "rangewebMob.png",
+            "proectInstrumen": "HTML, SCSS, Bootstrap, Java Script, API, Next.js",
             "proectAddress": "https://dev.rangeweb.ru/",
             "project": "rangeweb"
         },
@@ -122,8 +154,8 @@
             "name": "Consultation",
             "imgBg": "consultationBg.png",
             "imgPlan": "consultationPlan.png",
-            "imgMob" : "consultationMob.png",
-            "proectInstrumen" : "HTML, CSS, SCSS, Mui, Java Script, API, Next.js, Node.js, Mongodb",
+            "imgMob": "consultationMob.png",
+            "proectInstrumen": "HTML, CSS, SCSS, Mui, Java Script, API, Next.js, Node.js, Mongodb",
             "proectAddress": "https://consultation-client-react.vercel.app/",
             "project": "Consultation"
         },
@@ -132,8 +164,8 @@
             "name": "Child",
             "imgBg": "childhoodBg.png",
             "imgPlan": "childhoodPlan.png",
-            "imgMob" : "childhoodMob.png",
-            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, React, Redux, Swiper",
+            "imgMob": "childhoodMob.png",
+            "proectInstrumen": "HTML, CSS, SCSS, Java Script, React, Redux, Swiper",
             "proectAddress": "https://twogophers.github.io/persona-detstvo/",
             "project": "The project is designed for practice React.js"
         },
@@ -142,8 +174,8 @@
             "name": "circeya",
             "imgBg": "CirceyaBg.png",
             "imgPlan": "CicreyaPlan.png",
-            "imgMob" : "CirceyaMob.png",
-            "proectInstrumen" : "HTML, SCSS, Java Script, Vue",
+            "imgMob": "CirceyaMob.png",
+            "proectInstrumen": "HTML, SCSS, Java Script, Vue",
             "proectAddress": "https://twogophers.github.io/keep-calm/",
             "project": "Test project"
         },
@@ -152,8 +184,8 @@
             "name": "Revival",
             "imgBg": "revivalBg.png",
             "imgPlan": "revivalPlan.png",
-            "imgMob" : "revivalMob.png",
-            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, Vuex, Axios, Vue, Firebase",
+            "imgMob": "revivalMob.png",
+            "proectInstrumen": "HTML, CSS, SCSS, Java Script, Vuex, Axios, Vue, Firebase",
             "proectAddress": "https://twogophers.github.io/renaissanceV/#/",
             "project": "Art Store"
         },
@@ -162,8 +194,8 @@
             "name": "Guitar",
             "imgBg": "guitarBg.png",
             "imgPlan": "guitarPlan.png",
-            "imgMob" : "guitarMob.png",
-            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, Nuxt, Vuex, Axios, Vue, Firebase",
+            "imgMob": "guitarMob.png",
+            "proectInstrumen": "HTML, CSS, SCSS, Java Script, Nuxt, Vuex, Axios, Vue, Firebase",
             "proectAddress": "https://twogophers.github.io/guitare-test/",
             "project": "Guitar Shop"
         },
@@ -172,8 +204,8 @@
             "name": "Apartments",
             "imgBg": "kv-BG.png",
             "imgPlan": "kv-Plan.png",
-            "imgMob" : "kv_MOB.png",
-            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, Vue, Vuetify",
+            "imgMob": "kv_MOB.png",
+            "proectInstrumen": "HTML, CSS, SCSS, Java Script, Vue, Vuetify",
             "proectAddress": "https://twogophers.github.io/test-kv/",
             "project": "Apartments"
         },
@@ -182,8 +214,8 @@
             "name": "Pink-cat",
             "imgBg": "pink-catBg.png",
             "imgPlan": "pink-catPlan.png",
-            "imgMob" : "pink-catMob.png",
-            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, Vuex, Axios, Vue, Firebase",
+            "imgMob": "pink-catMob.png",
+            "proectInstrumen": "HTML, CSS, SCSS, Java Script, Vuex, Axios, Vue, Firebase",
             "proectAddress": "https://twogophers.github.io/pink-shop/#/",
             "project": "Cosmetics Store"
         },
@@ -192,8 +224,8 @@
             "name": "Weather",
             "imgBg": "weatherBg.png",
             "imgPlan": "weatherPlan.png",
-            "imgMob" : "weatherMob.png",
-            "proectInstrumen" : "HTML, CSS, SCSS, Java Script, API",
+            "imgMob": "weatherMob.png",
+            "proectInstrumen": "HTML, CSS, SCSS, Java Script, API",
             "proectAddress": "https://twogophers.github.io/weather/index.html",
             "project": "Weather website"
         }
